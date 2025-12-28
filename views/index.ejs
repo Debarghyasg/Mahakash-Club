@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahakash Club</title>
+    <link rel="icon" type="image/png" href="welcome.png">
+    <br />
+    <br />
+    <br />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="welcome-screen" id="welcomeScreen">
+        
+        <img src="welcome.png" alt="Welcome Logo" class="welcome-image" width="200" height="300">
+        <div class="welcome-subtitle"><b>Clustor of minds with same obsession with astronomy and space exploration </b></div>
+    </div>
+
+    <div class="stars" id="starfield"></div>
+<%- include('navbar.ejs') %>
+    
+    <div class="container">
+        <header>
+            <h1>
+            <img src="m2.png" alt="Space Explorer Logo" class="header-logo" width="850" height="400">
+            </h1>
+            <p><b>Journey Through the Cosmos</b></p>
+        </header>
+
+        <div class="content-section">
+            <h2><b>Welcome to Mahakash Club</b> </h2>
+            <p>Mahakash Club of GNIT is a space club.This club mainly focuses to foster curiosity and interest in space related fields like Astrophysics, Aerospace Engineering etc.🚀Mahakash club organises various meets and seminars to promote space awareness among Students.🌌
+
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2><b>Featured Destinations</b></h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>🪐 Saturn</h3>
+                    <p>The ringed giant of our solar system, a jewel in the cosmic crown.</p>
+                </div>
+                <div class="card">
+                    <h3>🌕 Moon</h3>
+                    <p>Earth's celestial companion, our gateway to space exploration.</p>
+                </div>
+                <div class="card">
+                    <h3>⭐ Nebulae</h3>
+                    <p>Stellar nurseries where stars are born in cosmic clouds.</p>
+                </div>
+                <div class="card">
+                    <h3>🌟 Galaxies</h3>
+                    <p>Vast islands of stars stretching across the universe.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="moving-strip">
+            <div class="strip-content">
+                <div class="strip-item">🌟 Mahakash Club</div>
+                <div class="strip-separator">●</div>
+                <div class="strip-item">🚀 GNIT</div>
+                <div class="strip-separator">●</div>
+                <div class="strip-item">🛰️ JIS</div>
+                <div class="strip-separator">●</div>
+                <div class="strip-item">🔭 ISRO</div>
+                <div class="strip-separator">●</div>
+                <div class="strip-item">⭐ Mahakash Club</div>
+                <div class="strip-separator">●</div>
+                <div class="strip-item">🌌Space</div>
+                <div class="strip-separator">●</div>
+                <div class="strip-item">🌟 NASA</div>
+                <div class="strip-separator">●</div>
+                <div class="strip-item">🚀 SpaceX</div>
+                <div class="strip-separator">●</div>
+                <div class="strip-item">🛰️ GNIT</div>
+                <div class="strip-separator">●</div>
+                <div class="strip-item">🔭 ISRO</div>
+                <div class="strip-separator">●</div>
+                <div class="strip-item">⭐ JIS</div>
+                <div class="strip-separator">●</div>
+                <div class="strip-item">🌌 Mahakash club</div>
+                <div class="strip-separator">●</div>
+            </div>
+        </div>
+
+        <div class="content-section" id="discoveries">
+            <h2><b>Recent Space Discoveries</b></h2>
+            <p style="margin-bottom: 30px;">Explore the latest groundbreaking findings from the cosmos that are reshaping our understanding of the universe. Hover over the cards to reveal fascinating facts!</p>
+            
+            <div class="grid">
+                <div class="fact-card">
+                    <div class="fact-card-inner">
+                        <div class="fact-card-front">
+                            <h4>🌌 James Webb Telescope Discovers Ancient Galaxies</h4>
+                            <div class="date">December 2024</div>
+                            <p>The James Webb Space Telescope has identified some of the earliest galaxies ever observed, dating back to just 300 million years after the Big Bang.</p>
+                        </div>
+                        <div class="fact-card-back">
+                            <p>These ancient galaxies were already incredibly massive and bright, challenging everything we thought we knew about how quickly galaxies can form!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fact-card">
+                    <div class="fact-card-inner">
+                        <div class="fact-card-front">
+                            <h4><b>💧 Water Vapor Detected on Exoplanet K2-18b</b></h4>
+                            <div class="date">November 2024</div>
+                            <p>Scientists confirmed the presence of water vapor and potential biosignature gases in the atmosphere of exoplanet K2-18b, located 120 light-years away.</p>
+                        </div>
+                        <div class="fact-card-back">
+                            <p>K2-18b might have an ocean covering its entire surface under a hydrogen-rich atmosphere - imagine an alien water world!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fact-card">
+                    <div class="fact-card-inner">
+                        <div class="fact-card-front">
+                            <h4>🔴<b> Mars Perseverance Finds Organic Molecules</b></h4>
+                            <div class="date">October 2024</div>
+                            <p>NASA's Perseverance rover discovered diverse organic compounds in Jezero Crater, providing the strongest evidence yet that Mars may have once harbored microbial life.</p>
+                        </div>
+                        <div class="fact-card-back">
+                            <p>These organic molecules have been preserved for over 3 billion years in Martian rocks - ancient chemical signatures of possible life!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fact-card">
+                    <div class="fact-card-inner">
+                        <div class="fact-card-front">
+                            <h4>⚡ <b>Mysterious Fast Radio Bursts Traced to Magnetar</b></h4>
+                            <div class="date">September 2024</div>
+                            <p>Astronomers finally traced repeating fast radio bursts to a highly magnetic neutron star, solving one of astronomy's most perplexing mysteries.</p>
+                        </div>
+                        <div class="fact-card-back">
+                            <p>A single burst from a magnetar releases more energy in one millisecond than our Sun produces in 100 years!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <div class="content-section location-section" id="location">
+            <h2>📍 <b>Find Us</b></h2>
+            <p style="text-align: center; font-size: 1.1em; margin-bottom: 30px;">Visit our space club and join us for stargazing, workshops, and cosmic adventures!</p>
+            <div class="name">
+                <h2><b>Mahakash Club</b></h2>
+                <h3>Guru Nanak Institute of Technology</h3>
+            </div>
+            
+            <div class="location-info">
+                <div class="location-card">
+                    <h4>📍 Address</h4>
+                    <p>157/F, Nilgunj Rd, Sahid Colony<br>Panihati, Khardaha<br>West Bengal 700110</p>
+                </div>
+                <div class="location-card">
+                    <h4>📧 Email</h4>
+                    <p>gnitmahakash.official@gmail.com</p>
+                </div>
+                <div class="location-card">
+                    <h4>📞 Phone</h4>
+                    <p>7044153407</p>
+                </div>
+            </div>
+            <br />
+
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.8901582079525!2d88.3763245750815!3d22.695132579404543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f89c6df041e831%3A0x6e3fc1531d1cb33!2sGuru%20Nanak%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1766840752620!5m2!1sen!2sin" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="gnit"></iframe>
+                <img class='gnitimg'src="gnit.png" alt="Location Image" width="500" height="300">
+            </div>
+        </div>
+
+        
+        </div>
+
+        <footer>
+            <p>© Debarghya Sengupta | 2025</p>
+        </footer>
+    </div>
+
+
+    <script src="app.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+</html>
