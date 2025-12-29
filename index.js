@@ -18,6 +18,7 @@ app.get("/ventures",(req,res)=>{
 app.get("/team",(req,res)=>{
     res.render("team.ejs");
 });
+
 app.get("/about",(req,res)=>{
     res.render("about.ejs");
 });
