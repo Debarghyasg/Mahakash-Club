@@ -40,17 +40,74 @@
             }, 2000);
         }
 
-        // Create initial stars
-        createStars();
 
-        // Create shooting star every 10 seconds
-        setInterval(createShootingStar, 10000);
+
+
+
+
+        const menuIcon = document.getElementById('menu-icon');
+const navMenu = document.getElementById('nav-menu');
+
+menuIcon.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+
+
+
+
+
+
+function createStars() {
+    const starsContainer = document.querySelector('.stars');
+    const starCount = 200; // Adjust for density
+
+    for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
         
-        // Create first shooting star after 2 seconds
-        setTimeout(createShootingStar, 2000);
+        // Random Position
+        const x = Math.random() * 100;
+        const y = Math.random() * 100;
+        
+        // Random Size
+        const size = Math.random() * 3;
+        
+        // Random Animation Duration
+        const duration = Math.random() * 3 + 2;
 
-        // Hide welcome screen after animation
-        setTimeout(() => {
-            const welcomeScreen = document.getElementById('welcomeScreen');
-            welcomeScreen.classList.add('hidden');
-        }, 4000);
+        star.style.left = `${x}%`;
+        star.style.top = `${y}%`;
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.animationDuration = `${duration}s`;
+        
+        starsContainer.appendChild(star);
+    }
+}
+createStars();
+
+
+
+
+
+
+function createShootingStar() {
+    const star = document.createElement('div');
+    star.className = 'shooting-star';
+    
+    // Random starting position
+    star.style.top = Math.random() * 50 + '%';
+    star.style.left = Math.random() * 50 + '%';
+    
+    document.body.appendChild(star);
+
+    // Remove the element after animation finishes to prevent lag
+    setTimeout(() => {
+        star.remove();
+    }, 2000);
+}
+
+// Launch a shooting star every 4-8 seconds
+setInterval(createShootingStar, Math.random() * 4000 + 4000);
+
+      
