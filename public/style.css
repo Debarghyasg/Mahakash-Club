@@ -1214,6 +1214,14 @@
             margin-bottom: 60px;
 }
 
+@media (max-width: 600px) {
+.welcome-screen {
+        font-size: 1rem;
+        text-align: center;
+
+    }
+}
+
 
 
 
