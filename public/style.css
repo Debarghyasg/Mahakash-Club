@@ -1080,6 +1080,7 @@
             }
 
             .welcome-text {
+                
                 font-size: 2em;
             }
 
@@ -1090,7 +1091,7 @@
         @media (max-width: 460px) {
             #header-logo {
                 height:3em;
-                width:6em;
+                width:9em;
             }}
         @media (max-width: 768px) {
             .map-container{
