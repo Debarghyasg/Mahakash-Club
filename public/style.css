@@ -1209,6 +1209,11 @@
     display: block; 
   }
 }
+#about{
+     text-align: center;
+            margin-bottom: 60px;
+}
+
 
 
 
