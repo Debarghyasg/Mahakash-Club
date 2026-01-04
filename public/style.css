@@ -1182,7 +1182,7 @@
   }
 
   /* Better: Hide the entire UL containing the desktop links */
-  /* Since your desktop UL doesn't have a class, we target the second UL in the container */
+
   .nav-container ul:not(#nav-menu) {
     display: none;
   }
@@ -1204,7 +1204,7 @@
     display: none;
   }
 
-  /* Show mobile menu when needed (e.g., when 'active' class is added via JS) */
+  /* Show mobile menu when needed */
   .mobile-only {
     display: block; 
   }
@@ -1221,6 +1221,17 @@
 
     }
 }
+@media (max-width: 600px) {
+    .ventures{
+        padding-left:10px;
+        padding-right:10px;
+    }
+    #ventures{
+        font-size: 0.7rem;
+        /* text-align: center; */
+    }
+}
+
 
 
 
