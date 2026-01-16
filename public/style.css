@@ -1182,7 +1182,7 @@
   }
 
   /* Better: Hide the entire UL containing the desktop links */
-
+  /* Since your desktop UL doesn't have a class, we target the second UL in the container */
   .nav-container ul:not(#nav-menu) {
     display: none;
   }
