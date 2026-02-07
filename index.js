@@ -25,6 +25,10 @@ app.get("/about",(req,res)=>{
 // app.get("/contact",(req,res)=>{
 //     res.render("contactmb.ejs");
 // });
+app.get("/blogs",(req,res)=>{
+    res.render("blogs.ejs");
+});
+
 
 
 

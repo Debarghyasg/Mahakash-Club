@@ -46,10 +46,10 @@
 
 
         const menuIcon = document.getElementById('menu-icon');
-const navMenu = document.getElementById('nav-menu');
+        const navMenu = document.getElementById('nav-menu');
 
-menuIcon.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
+        menuIcon.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
 });
 
 
@@ -110,4 +110,47 @@ function createShootingStar() {
 // Launch a shooting star every 4-8 seconds
 setInterval(createShootingStar, Math.random() * 4000 + 4000);
 
-      
+
+
+
+
+
+
+
+
+// function togglePDF() {
+//     const modal = document.getElementById('pdf-modal');
+    
+//     if (modal.style.display === 'none' || modal.style.display === '') {
+//         modal.style.display = 'flex';
+//         document.body.style.overflow = 'hidden'; // Stop background scrolling
+//     } else {
+//         modal.style.display = 'none';
+//         document.body.style.overflow = 'auto'; // Re-enable scrolling
+//     }
+// }
+
+// Optional: Close if they click outside the PDF box
+window.onclick = function(event) {
+    const modal = document.getElementById('pdf-modal');
+    if (event.target == modal) {
+        togglePDF();
+    }
+}
+     
+function togglePDF(file) {
+    const modal = document.getElementById('pdf-modal');
+    // Select the iframe inside the modal
+    const iframe = modal.querySelector('iframe');
+    
+    if (modal.style.display === 'none' || modal.style.display === '') {
+        // If a file is passed, update the iframe source before showing
+        if(file) iframe.src = file;
+        
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevents background scrolling
+    } else {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Re-enables scrolling
+    }
+}

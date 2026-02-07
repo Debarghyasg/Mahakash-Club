@@ -866,6 +866,7 @@
             opacity: 1;
         }
 
+
         .social-link {
             width: 50px;
             height: 50px;
@@ -1235,6 +1236,57 @@
     color: #E2E8F0;
     text-decoration: none;
 }
+.content{
+    height:100px;
+    width:100px;
+}
+
+
+
+@media screen and (max-width: 600px) {
+    /* 1. Center the container that holds the image and the ring */
+    .profile-image-container {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        position: relative !important;
+        left: 0 !important; /* Resets any manual positioning */
+        width: fit-content !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* 2. Ensure the background container also aligns children to the center */
+    .card-background {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+    }
+
+    /* 3. Ensure the ring stays centered behind/around the image */
+    .planet-ring {
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        margin: 0 !important;
+    }
+
+    /* 4. Center all text inside the cards for a cleaner mobile look */
+    .team-card {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    /* 5. Center the social links flexbox */
+    .social-links {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 10px !important;
+    }
+}
 
 
 
@@ -1256,4 +1308,135 @@
 
 
 
+@media screen and (max-width: 600px) {
+    /* Target the container */
+    .assi {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
 
+    /* Target cards*/
+    .card2 {
+        margin-left: 0 !important;
+        display: block !important;
+        float: none !important;    /* Removes any left/right floating */
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-bottom: 20px !important;
+        width: 90% !important;     /* Adjust width for mobile */
+        max-width: 320px !important;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*associate section code*/
+
+
+.card2{
+    height:320px;
+    width:250px;
+    display:inline-block;
+    border-radius:15px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    background: rgb(247, 247, 247);
+    color: black;
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 70px;
+  
+}
+.card-background2{
+    height:200px;
+    width:185px;
+}
+
+.card2-img{
+    padding-top: 15px;
+    height:230px;
+    width:200px;
+    border-radius:30%;
+    justify-content: center;
+    align-items: center;
+}
+        .card2::before {
+            display: none;
+        }
+
+        .card2:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .card2-background {
+            width: 100%;
+            height: 320px;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1e3a8a 100%);
+            border-radius: 20px 20px 0 0;
+            position: relative;
+            margin-bottom: 20px;
+            overflow: visible;
+        }
+        .section-title2{
+            text-align: center;
+            font-size: 2.5rem;
+            margin: 60px 0 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            position: relative;
+            width: fit-content;
+        }
+
+        .section-title2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #00d9ff, transparent);
+        }
+                
+        .card2:hover .social-links {
+            left: 20px;
+            opacity: 1;
+        }
+        .card-title{
+            padding-top: 10px;
+            text-align: center;
+            font-weight: 600;
+        }
+        .card-text{
+            color: #266aa9;
+        }
+        .assi{
+            margin-left: 50px;
+        }
+        @media screen and (max-width: 600px) {
+            .cta-button {
+                width: 170px !important;
+                padding: 12px 30px !important;
+                font-size: 1rem !important;
+            }
+        }
+        .welcome-heading2{
+            text-align: center !important;
+        }
+    
+        
