@@ -20,5 +20,5 @@ Styling: Custom CSS with a focus on dark-mode space aesthetics.
 
 
 
-Owner- Debarghya Sengupta
+Owner- Debarghya Sengupta | 2025
 
