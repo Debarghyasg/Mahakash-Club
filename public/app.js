@@ -1,55 +1,55 @@
-        function createStars() {
-            const starfield = document.getElementById('starfield');
-            const numberOfStars = 200;
+function createStars() {
+    const starfield = document.getElementById('starfield');
+    const numberOfStars = 200;
 
-            for (let i = 0; i < numberOfStars; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                
-                const size = Math.random() * 3 + 1;
-                star.style.width = size + 'px';
-                star.style.height = size + 'px';
-                
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                
-                const duration = Math.random() * 3 + 2;
-                star.style.animationDuration = duration + 's';
-                
-                const delay = Math.random() * 3;
-                star.style.animationDelay = delay + 's';
-                
-                starfield.appendChild(star);
-            }
-        }
+    for (let i = 0; i < numberOfStars; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        
+        const size = Math.random() * 3 + 1;
+        star.style.width = size + 'px';
+        star.style.height = size + 'px';
+        
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        
+        const duration = Math.random() * 3 + 2;
+        star.style.animationDuration = duration + 's';
+        
+        const delay = Math.random() * 3;
+        star.style.animationDelay = delay + 's';
+        
+        starfield.appendChild(star);
+    }
+}
 
-        function createShootingStar() {
-            const shootingStar = document.createElement('div');
-            shootingStar.className = 'shooting-star';
-            
-            // Random starting position on the left side
-            const startY = Math.random() * 50; // Top 50% of screen
-            shootingStar.style.top = startY + '%';
-            shootingStar.style.left = '0';
-            
-            document.body.appendChild(shootingStar);
-            
-            // Remove the shooting star after animation completes
-            setTimeout(() => {
-                shootingStar.remove();
-            }, 2000);
-        }
-
-
+function createShootingStar() {
+    const shootingStar = document.createElement('div');
+    shootingStar.className = 'shooting-star';
+    
+    // Random starting position on the left side
+    const startY = Math.random() * 50; // Top 50% of screen
+    shootingStar.style.top = startY + '%';
+    shootingStar.style.left = '0';
+    
+    document.body.appendChild(shootingStar);
+    
+    // Remove the shooting star after animation completes
+    setTimeout(() => {
+        shootingStar.remove();
+    }, 2000);
+}
 
 
 
 
-        const menuIcon = document.getElementById('menu-icon');
-        const navMenu = document.getElementById('nav-menu');
 
-        menuIcon.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
+
+const menuIcon = document.getElementById('menu-icon');
+const navMenu = document.getElementById('nav-menu');
+
+menuIcon.addEventListener('click', () => {
+navMenu.classList.toggle('active');
 });
 
 
@@ -154,3 +154,45 @@ function togglePDF(file) {
         document.body.style.overflow = 'auto'; // Re-enables scrolling
     }
 }
+
+
+// ===================================================
+// JOIN CLUB POPUP
+// ===================================================
+document.addEventListener('DOMContentLoaded', () => {
+    const overlay = document.getElementById('joinPopupOverlay');
+    const closeBtn = document.getElementById('joinPopupClose');
+    const popupImg = document.getElementById('joinPopupImg');
+    const formLink = 'https://forms.gle/c5zASLmAqaCn7MSt5';
+
+    if (!overlay) return;
+
+    // Show popup shortly after load
+    setTimeout(() => {
+        overlay.classList.add('active');
+    }, 800);
+
+    // Click image -> redirect to Google Form
+    popupImg.addEventListener('click', () => {
+        window.open(formLink, '_blank');
+    });
+
+    // Close on X button
+    closeBtn.addEventListener('click', () => {
+        overlay.classList.remove('active');
+    });
+
+    // Close on clicking outside the popup box
+    overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            overlay.classList.remove('active');
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            overlay.classList.remove('active');
+        }
+    });
+});
