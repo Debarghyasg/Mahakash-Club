@@ -488,26 +488,6 @@
 .dropdown{
     background-color: black;
 }
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         .container {
             max-width: 1600px;
@@ -570,8 +550,6 @@
             display: block;
         }
 
-     
-
         .section-title {
             text-align: center;
             font-size: 2.5rem;
@@ -601,25 +579,25 @@
             overflow-x: auto;
             padding-bottom: 20px;
         }
-        
+
         .team-grid::-webkit-scrollbar {
             height: 8px;
         }
-        
+
         .team-grid::-webkit-scrollbar-track {
             background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
         }
-        
+
         .team-grid::-webkit-scrollbar-thumb {
             background: rgba(0, 217, 255, 0.5);
             border-radius: 10px;
         }
-        
+
         .team-grid::-webkit-scrollbar-thumb:hover {
             background: rgba(0, 217, 255, 0.8);
         }
-        
+
         .team-grid .team-card {
             min-width: 380px;
             max-width: 380px;
@@ -633,7 +611,6 @@
             text-align: center;
             position: relative;
             overflow: visible;
-           
             transition: all 0.4s ease;
             border: 1px solid rgba(0, 0, 0, 0.1);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -727,58 +704,28 @@
         }
 
         @keyframes float1 {
-            0%, 100% { 
-                transform: translate(0, 0);
-                opacity: 0.6;
-            }
-            50% { 
-                transform: translate(20px, -15px);
-                opacity: 1;
-            }
+            0%, 100% { transform: translate(0, 0); opacity: 0.6; }
+            50% { transform: translate(20px, -15px); opacity: 1; }
         }
 
         @keyframes float2 {
-            0%, 100% { 
-                transform: translate(0, 0);
-                opacity: 0.5;
-            }
-            50% { 
-                transform: translate(-15px, 20px);
-                opacity: 1;
-            }
+            0%, 100% { transform: translate(0, 0); opacity: 0.5; }
+            50% { transform: translate(-15px, 20px); opacity: 1; }
         }
 
         @keyframes float3 {
-            0%, 100% { 
-                transform: translate(0, 0);
-                opacity: 0.7;
-            }
-            50% { 
-                transform: translate(15px, 18px);
-                opacity: 1;
-            }
+            0%, 100% { transform: translate(0, 0); opacity: 0.7; }
+            50% { transform: translate(15px, 18px); opacity: 1; }
         }
 
         @keyframes float4 {
-            0%, 100% { 
-                transform: translate(0, 0);
-                opacity: 0.6;
-            }
-            50% { 
-                transform: translate(-20px, -12px);
-                opacity: 1;
-            }
+            0%, 100% { transform: translate(0, 0); opacity: 0.6; }
+            50% { transform: translate(-20px, -12px); opacity: 1; }
         }
 
         @keyframes float5 {
-            0%, 100% { 
-                transform: translate(0, 0);
-                opacity: 0.5;
-            }
-            50% { 
-                transform: translate(10px, -20px);
-                opacity: 0.9;
-            }
+            0%, 100% { transform: translate(0, 0); opacity: 0.5; }
+            50% { transform: translate(10px, -20px); opacity: 0.9; }
         }
 
         .profile-image-container {
@@ -866,7 +813,6 @@
             opacity: 1;
         }
 
-
         .social-link {
             width: 50px;
             height: 50px;
@@ -889,7 +835,6 @@
             background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
         }
 
-
         .social-link:hover {
             transform: scale(1.15);
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
@@ -897,240 +842,80 @@
 
         /* Laptop optimization */
         @media (min-width: 1024px) and (max-width: 1600px) {
-            .container {
-                padding: 50px 40px;
-            }
-
-            .header h1 {
-                font-size: 4.5rem;
-                margin-bottom: 50px;
-            }
-
-            .team-grid {
-                gap: 150px;
-                padding: 0 240px;
-            }
-
-            .team-grid .team-card {
-                min-width: 400px;
-                max-width: 400px;
-            }
+            .container { padding: 50px 40px; }
+            .header h1 { font-size: 4.5rem; margin-bottom: 50px; }
+            .team-grid { gap: 150px; padding: 0 240px; }
+            .team-grid .team-card { min-width: 400px; max-width: 400px; }
         }
 
         /* Large laptop/desktop optimization */
         @media (min-width: 1600px) {
-            .header h1 {
-                font-size: 5rem;
-            }
-
-            .team-grid {
-                gap: 60px;
-                padding: 0 40px;
-            }
+            .header h1 { font-size: 5rem; }
+            .team-grid { gap: 60px; padding: 0 40px; }
         }
 
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.5rem;
-                letter-spacing: 4px;
-            }
-
-            .tabs {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .tab {
-                width: 80%;
-                max-width: 300px;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .team-grid .team-card {
-                min-width: 280px;
-                max-width: 280px;
-            }
-
-            .card-background {
-                height: 240px;
-            }
-
-            .profile-image-container {
-              
-                width: 200px;
-                height: 200px;
-            }
-
-            .profile-image {
-              
-                width: 200px;
-                height: 200px;
-            }
-
-            .planet-ring {
-                
-                width: 200px;
-                height: 200px;
-            }
-
-            .member-name {
-                font-size: 1.5rem;
-            }
-
-            .member-role {
-                font-size: 0.9rem;
-            }
-
-            .member-bio {
-                font-size: 0.9rem;
-            }
-
-            .social-links {
-                left: 10px;
-            }
-
-            .social-link {
-                width: 40px;
-                height: 40px;
-            }
+            .header h1 { font-size: 2.5rem; letter-spacing: 4px; }
+            .tabs { flex-direction: column; align-items: center; }
+            .tab { width: 80%; max-width: 300px; }
+            .section-title { font-size: 2rem; }
+            .team-grid .team-card { min-width: 280px; max-width: 280px; }
+            .card-background { height: 240px; }
+            .profile-image-container { width: 200px; height: 200px; }
+            .profile-image { width: 200px; height: 200px; }
+            .planet-ring { width: 200px; height: 200px; }
+            .member-name { font-size: 1.5rem; }
+            .member-role { font-size: 0.9rem; }
+            .member-bio { font-size: 0.9rem; }
+            .social-links { left: 10px; }
+            .social-link { width: 40px; height: 40px; }
         }
 
         @media (max-width: 480px) {
-            .header h1 {
-                font-size: 2rem;
-                letter-spacing: 2px;
-            }
-
-            .tab {
-                padding: 12px 30px;
-                font-size: 1rem;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
-            }
-
-            .team-grid .team-card {
-                min-width: 260px;
-                max-width: 260px;
-            }
-
-            .card-background {
-                height: 220px;
-            }
-
-            .profile-image-container {
-                width: 130px;
-                height: 130px;
-                margin: 40px auto 0;
-            }
-
-            .profile-image {
-                width: 130px;
-                height: 130px;
-            }
-
-            .planet-ring {
-                width: 160px;
-                height: 160px;
-            }
-
-            .member-name {
-                font-size: 1.3rem;
-                margin: 15px 0 8px;
-            }
-
-            .member-role {
-                font-size: 0.85rem;
-                margin-bottom: 10px;
-            }
-
-            .member-bio {
-                font-size: 0.85rem;
-                line-height: 1.5;
-            }
-
-            .floating-orb {
-                transform: scale(0.8);
-            }
+            .header h1 { font-size: 2rem; letter-spacing: 2px; }
+            .tab { padding: 12px 30px; font-size: 1rem; }
+            .section-title { font-size: 1.5rem; }
+            .team-grid .team-card { min-width: 260px; max-width: 260px; }
+            .card-background { height: 220px; }
+            .profile-image-container { width: 130px; height: 130px; margin: 40px auto 0; }
+            .profile-image { width: 130px; height: 130px; }
+            .planet-ring { width: 160px; height: 160px; }
+            .member-name { font-size: 1.3rem; margin: 15px 0 8px; }
+            .member-role { font-size: 0.85rem; margin-bottom: 10px; }
+            .member-bio { font-size: 0.85rem; line-height: 1.5; }
+            .floating-orb { transform: scale(0.8); }
         }
 
-
-        .teamhead{
-            padding-top: 150px;
-        }
-        .dropdown-menu{
-            background-color: rgb(102, 44, 152);
-        }
-        .dropdown-item{
-            color: white;
-        }
+        .teamhead{ padding-top: 150px; }
+        .dropdown-menu{ background-color: rgb(102, 44, 152); }
+        .dropdown-item{ color: white; }
         #dropdown{
             background-color: rgba(2, 6, 23, 0.5);
            color:rgb(255, 255, 255);
            backdrop-filter: 20px;
         }
-        .welcome-subtitle{
-            padding-top: 20px;
+        .welcome-subtitle{ padding-top: 20px; }
+
+        @media (max-width: 460px) {
+            .welcome-logo { font-size: 3em; }
+            .welcome-text { font-size: 2em; }
+            .welcome-subtitle { font-size: 1em; }
         }
         @media (max-width: 460px) {
-            .welcome-logo {
-                font-size: 3em;
-            }
-
-            .welcome-text {
-                
-                font-size: 2em;
-            }
-
-            .welcome-subtitle {
-                font-size: 1em;
-            }
-        }
-        @media (max-width: 460px) {
-            #header-logo {
-                height:3em;
-                width:9em;
-            }}
-        @media (max-width: 768px) {
-            .map-container{
-                flex-direction: column;
-            }
-        }
-         @media (max-width: 768px) {
-            #governors .team-grid{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
+            #header-logo { height:3em; width:9em; }
         }
         @media (max-width: 768px) {
-            #steering .team-grid{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
+            .map-container{ flex-direction: column; }
+        }
+        @media (max-width: 768px) {
+            #governors .team-grid{ display: flex; flex-direction: column; align-items: center; }
+        }
+        @media (max-width: 768px) {
+            #steering .team-grid{ display: flex; flex-direction: column; align-items: center; }
         }
          @media (max-width: 768px) {
-            #executive .team-grid{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                
-            }
+            #executive .team-grid{ display: flex; flex-direction: column; align-items: center; }
         }
-
-
-
-
-
-
-
-
-
 
 /* 1. Hide the sandwich icon on desktop */
 .menu-icon {
@@ -1143,25 +928,23 @@
 .menu-icon span {
     width: 25px;
     height: 3px;
-    background-color: white; /* Match your theme */
+    background-color: white;
 }
 
 /* 2. Mobile Logic */
 @media (max-width: 768px) {
-    .menu-icon {
-        display: flex; /* Show the sandwich button */
-    }
+    .menu-icon { display: flex; }
 
     ul#nav-menu {
-        display: none; /* Hide the links by default */
+        display: none;
         flex-direction: column;
         position: absolute;
-        top: 80px; /* Adjust based on your navbar height */
+        top: 80px;
         padding-top: 50px;
         left: 50%;
         transform: translateX(-50%);
         width: 100%;
-        background-color: rgb(0, 0, 0, 0.9); /* Match your space theme */
+        background-color: rgb(0, 0, 0, 0.9);
         padding: 20px;
         height: 22em;
         width: 15em;
@@ -1171,81 +954,35 @@
         list-style: none;
     }
 
-    /* This class will be added by JavaScript */
-    ul#nav-menu.active {
-        display: flex;
-    }
+    ul#nav-menu.active { display: flex; }
 }
 
 @media (max-width: 768px) {
-  /* This hides the links themselves */
-  .bnav {
-    display: none;
-  }
-
-  /* Better: Hide the entire UL containing the desktop links */
-  /* Since your desktop UL doesn't have a class, we target the second UL in the container */
-  .nav-container ul:not(#nav-menu) {
-    display: none;
-  }
-  
-  /* Also hide the Contact Me dropdown if needed */
-  .dropdown {
-    display: none;
-  }
+  .bnav { display: none; }
+  .nav-container ul:not(#nav-menu) { display: none; }
+  .dropdown { display: none; }
 }
 
-/* Default: Hide mobile menu on large screens */
-.mobile-only {
-  display: none;
-}
+.mobile-only { display: none; }
 
 @media (max-width: 768px) {
-  /* Hide desktop menu on small screens */
-  .desktop-only, .dropdown {
-    display: none;
-  }
+  .desktop-only, .dropdown { display: none; }
+  .mobile-only { display: block; }
+}
 
-  /* Show mobile menu when needed */
-  .mobile-only {
-    display: block; 
-  }
-}
-#about{
-     text-align: center;
-            margin-bottom: 60px;
-}
+#about{ text-align: center; margin-bottom: 60px; }
 
 @media (max-width: 600px) {
-.welcome-screen {
-        font-size: 1rem;
-        text-align: center;
-
-    }
+.welcome-screen { font-size: 1rem; text-align: center; }
 }
 @media (max-width: 600px) {
-    .ventures{
-        padding-left:10px;
-        padding-right:10px;
-    }
-    #ventures{
-        font-size: 0.7rem;
-        /* text-align: center; */
-    }
+    .ventures{ padding-left:10px; padding-right:10px; }
+    #ventures{ font-size: 0.7rem; }
 }
-.email{
-    color: #E2E8F0;
-    text-decoration: none;
-}
-.content{
-    height:100px;
-    width:100px;
-}
-
-
+.email{ color: #E2E8F0; text-decoration: none; }
+.content{ height:100px; width:100px; }
 
 @media screen and (max-width: 600px) {
-    /* 1. Center the container that holds the image and the ring */
     .profile-image-container {
         display: flex !important;
         justify-content: center !important;
@@ -1253,35 +990,27 @@
         margin-left: auto !important;
         margin-right: auto !important;
         position: relative !important;
-        left: 0 !important; /* Resets any manual positioning */
+        left: 0 !important;
         width: fit-content !important;
         margin-bottom: 20px !important;
     }
-
-    /* 2. Ensure the background container also aligns children to the center */
     .card-background {
         display: flex !important;
         justify-content: center !important;
         align-items: center !important;
         width: 100% !important;
     }
-
-    /* 3. Ensure the ring stays centered behind/around the image */
     .planet-ring {
         left: 50% !important;
         top: 50% !important;
         transform: translate(-50%, -50%) !important;
         margin: 0 !important;
     }
-
-    /* 4. Center all text inside the cards for a cleaner mobile look */
     .team-card {
         text-align: center !important;
         margin-left: auto !important;
         margin-right: auto !important;
     }
-
-    /* 5. Center the social links flexbox */
     .social-links {
         display: flex !important;
         justify-content: center !important;
@@ -1289,28 +1018,7 @@
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @media screen and (max-width: 600px) {
-    /* Target the container */
     .assi {
         display: flex !important;
         flex-direction: column !important;
@@ -1320,34 +1028,19 @@
         padding: 0 !important;
         margin: 0 !important;
     }
-
-    /* Target cards*/
     .card2 {
         margin-left: 0 !important;
         display: block !important;
-        float: none !important;    /* Removes any left/right floating */
+        float: none !important;
         margin-left: auto !important;
         margin-right: auto !important;
         margin-bottom: 20px !important;
-        width: 90% !important;     /* Adjust width for mobile */
+        width: 90% !important;
         max-width: 320px !important;
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
 /*associate section code*/
-
-
 .card2{
     height:320px;
     width:250px;
@@ -1361,13 +1054,8 @@
     text-align: center;
     margin-top: 30px;
     margin-left: 70px;
-  
 }
-.card-background2{
-    height:200px;
-    width:185px;
-}
-
+.card-background2{ height:200px; width:185px; }
 .card2-img{
     padding-top: 15px;
     height:230px;
@@ -1376,15 +1064,8 @@
     justify-content: center;
     align-items: center;
 }
-        .card2::before {
-            display: none;
-        }
-
-        .card2:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-        }
-
+        .card2::before { display: none; }
+        .card2:hover { transform: translateY(-10px); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2); }
         .card2-background {
             width: 100%;
             height: 320px;
@@ -1403,7 +1084,6 @@
             position: relative;
             width: fit-content;
         }
-
         .section-title2::after {
             content: '';
             position: absolute;
@@ -1413,32 +1093,14 @@
             height: 2px;
             background: linear-gradient(to right, transparent, #00d9ff, transparent);
         }
-                
-        .card2:hover .social-links {
-            left: 20px;
-            opacity: 1;
-        }
-        .card-title{
-            padding-top: 10px;
-            text-align: center;
-            font-weight: 600;
-        }
-        .card-text{
-            color: #266aa9;
-        }
-        .assi{
-            margin-left: 50px;
-        }
+        .card2:hover .social-links { left: 20px; opacity: 1; }
+        .card-title{ padding-top: 10px; text-align: center; font-weight: 600; }
+        .card-text{ color: #266aa9; }
+        .assi{ margin-left: 50px; }
         @media screen and (max-width: 600px) {
-            .cta-button {
-                width: 170px !important;
-                padding: 12px 30px !important;
-                font-size: 1rem !important;
-            }
+            .cta-button { width: 170px !important; padding: 12px 30px !important; font-size: 1rem !important; }
         }
-        .welcome-heading2{
-            text-align: center !important;
-        }
+        .welcome-heading2{ text-align: center !important; }
 
 /* ===================================================
    JOIN CLUB POPUP
@@ -1458,10 +1120,7 @@
     padding: 20px;
 }
 
-.join-popup-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
+.join-popup-overlay.active { opacity: 1; visibility: visible; }
 
 .join-popup {
     position: relative;
@@ -1477,9 +1136,7 @@
     text-align: center;
 }
 
-.join-popup-overlay.active .join-popup {
-    transform: scale(1) translateY(0);
-}
+.join-popup-overlay.active .join-popup { transform: scale(1) translateY(0); }
 
 .join-popup-img {
     width: 100%;
@@ -1534,18 +1191,154 @@
 }
 
 @media (max-width: 480px) {
-    .join-popup {
-        width: 100%;
-        padding: 14px;
-        border-radius: 14px;
+    .join-popup { width: 100%; padding: 14px; border-radius: 14px; }
+    .join-popup-close { top: -14px; right: -6px; width: 32px; height: 32px; }
+    .join-popup-cta { font-size: 0.95em; }
+}
+
+
+
+/* =====================================================================
+   NEW — ATMOSPHERE & MOTION LAYER
+   Everything below is additive. Nothing above was removed, so this
+   file is a drop-in replacement for the original style.css.
+   ===================================================================== */
+
+/* ---- Nebula backdrop: soft drifting colour behind the starfield ---- */
+body::before {
+    content: '';
+    position: fixed;
+    inset: -10%;
+    z-index: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(ellipse 60% 40% at 20% 15%, rgba(175, 147, 186, 0.14), transparent 60%),
+        radial-gradient(ellipse 50% 35% at 85% 25%, rgba(0, 217, 255, 0.10), transparent 60%),
+        radial-gradient(ellipse 55% 45% at 50% 90%, rgba(69, 132, 240, 0.10), transparent 60%);
+    animation: nebula-drift 40s ease-in-out infinite alternate;
+}
+
+@keyframes nebula-drift {
+    0%   { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(-2%, 2%) scale(1.06); }
+}
+
+/* ---- Scroll progress bar ---- */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, #af93ba, #00d9ff);
+    box-shadow: 0 0 10px rgba(0, 217, 255, 0.6);
+    z-index: 10002;
+    transition: width 0.1s ease-out;
+}
+
+/* ---- Ambient cursor glow ---- */
+.cursor-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 217, 255, 0.10), rgba(175, 147, 186, 0.06) 45%, transparent 70%);
+    pointer-events: none;
+    z-index: 3;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    will-change: transform;
+}
+
+/* ---- Scroll reveal ---- */
+.reveal {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* stagger children of a revealed grid slightly for a wave effect */
+.grid .reveal:nth-child(2) { transition-delay: 0.08s; }
+.grid .reveal:nth-child(3) { transition-delay: 0.16s; }
+.grid .reveal:nth-child(4) { transition-delay: 0.24s; }
+
+/* ---- Orbit divider: signature element for section breaks ---- */
+.orbit-divider {
+    position: relative;
+    width: 140px;
+    height: 60px;
+    margin: 10px auto 40px;
+    pointer-events: none;
+}
+
+.orbit-divider::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(175, 147, 186, 0.35);
+    border-radius: 50%;
+    transform: perspective(200px) rotateX(65deg);
+}
+
+.orbit-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    margin: -4px 0 0 -4px;
+    border-radius: 50%;
+    background: #00d9ff;
+    box-shadow: 0 0 12px #00d9ff, 0 0 24px rgba(0, 217, 255, 0.6);
+    animation: orbit-spin 6s linear infinite;
+}
+
+@keyframes orbit-spin {
+    0%   { transform: translate(70px, 0) scale(1); opacity: 1; }
+    25%  { transform: translate(0, 12px) scale(0.6); opacity: 0.6; }
+    50%  { transform: translate(-70px, 0) scale(1); opacity: 1; }
+    75%  { transform: translate(0, -12px) scale(0.6); opacity: 0.6; }
+    100% { transform: translate(70px, 0) scale(1); opacity: 1; }
+}
+
+/* ---- A refined default for any call-to-action button/link ---- */
+.cta-button {
+    display: inline-block;
+    padding: 14px 38px;
+    border-radius: 50px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    color: #020617;
+    background: linear-gradient(45deg, #00d9ff 0%, #af93ba 100%);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(0, 217, 255, 0.25);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 34px rgba(0, 217, 255, 0.4);
+}
+
+/* ---- Respect reduced motion system-wide ---- */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
     }
-    .join-popup-close {
-        top: -14px;
-        right: -6px;
-        width: 32px;
-        height: 32px;
-    }
-    .join-popup-cta {
-        font-size: 0.95em;
-    }
+    body::before { animation: none; }
+    .cursor-glow, .orbit-divider { display: none; }
 }

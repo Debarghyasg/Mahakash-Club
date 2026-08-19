@@ -18,6 +18,8 @@ app.get("/ventures",(req,res)=>{
 app.get("/team",(req,res)=>{
     res.render("team.ejs");
 });
+const spaceNewsRouter = require('./routes/spacenews');
+app.use('/api', spaceNewsRouter);
 
 app.get("/about",(req,res)=>{
     res.render("about.ejs");
