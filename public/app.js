@@ -192,18 +192,30 @@ function initSmoothScroll() {
             });
             // close mobile menu if it was open
             navMenu?.classList.remove('active');
+            navOverlay?.classList.remove('active');
+            document.body.classList.remove('nav-open');
         });
     });
 }
 
 /* ---------------------------------------------------------
-   MOBILE MENU TOGGLE
+   MOBILE MENU TOGGLE (+ blurred background overlay)
    --------------------------------------------------------- */
 const menuIcon = document.getElementById('menu-icon');
 const navMenu = document.getElementById('nav-menu');
+const navOverlay = document.getElementById('nav-blur-overlay');
 
 menuIcon?.addEventListener('click', () => {
     navMenu.classList.toggle('active');
+    navOverlay?.classList.toggle('active');
+    document.body.classList.toggle('nav-open');
+});
+
+// tapping the blurred background closes the menu
+navOverlay?.addEventListener('click', () => {
+    navMenu.classList.remove('active');
+    navOverlay.classList.remove('active');
+    document.body.classList.remove('nav-open');
 });
 
 /* ---------------------------------------------------------

@@ -49,24 +49,3 @@
 
 <!-- blurred overlay shown behind the mobile menu when it's open -->
 <div class="nav-blur-overlay" id="nav-blur-overlay"></div>
-
-<script>
-    const menuIcon = document.getElementById('menu-icon');
-    const navMenu = document.getElementById('nav-menu');
-    const navOverlay = document.getElementById('nav-blur-overlay');
-
-    function toggleMobileNav() {
-        navMenu.classList.toggle('active');
-        navOverlay.classList.toggle('active');
-        document.body.classList.toggle('nav-open');
-    }
-
-    menuIcon.addEventListener('click', toggleMobileNav);
-
-    // tapping the blurred background closes the menu
-    navOverlay.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        navOverlay.classList.remove('active');
-        document.body.classList.remove('nav-open');
-    });
-</script>
