@@ -1342,3 +1342,32 @@ body::before {
     body::before { animation: none; }
     .cursor-glow, .orbit-divider { display: none; }
 }
+
+
+
+
+
+
+
+
+
+
+/* ---- Mobile nav blur overlay ---- */
+.nav-blur-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 900; /* below nav (1000), above page content */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.nav-blur-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* prevent background scroll while me
