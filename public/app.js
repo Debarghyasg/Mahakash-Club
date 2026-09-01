@@ -3,7 +3,6 @@
    Cleaned up (old duplicate star/shooting-star functions
    removed) and extended with a few extra motion touches:
      - single source of truth for the starfield
-     - ambient cursor glow (desktop only, respects reduced motion)
      - top scroll-progress bar
      - scroll-reveal for content sections / cards
      - smooth-scroll for in-page anchor links
@@ -80,44 +79,6 @@ function createShootingStar() {
 function startShootingStars() {
     if (prefersReducedMotion) return;
     setInterval(createShootingStar, Math.random() * 4000 + 4000);
-}
-
-/* ---------------------------------------------------------
-   AMBIENT CURSOR GLOW
-   A soft trailing glow that follows the pointer — desktop
-   only, skipped on touch devices and reduced-motion.
-   --------------------------------------------------------- */
-function initCursorGlow() {
-    if (prefersReducedMotion) return;
-    if (window.matchMedia('(pointer: coarse)').matches) return; // skip on touch
-
-    const glow = document.createElement('div');
-    glow.className = 'cursor-glow';
-    document.body.appendChild(glow);
-
-    let targetX = window.innerWidth / 2;
-    let targetY = window.innerHeight / 2;
-    let currentX = targetX;
-    let currentY = targetY;
-
-    window.addEventListener('mousemove', (e) => {
-        targetX = e.clientX;
-        targetY = e.clientY;
-        glow.style.opacity = '1';
-    });
-
-    document.addEventListener('mouseleave', () => {
-        glow.style.opacity = '0';
-    });
-
-    function animate() {
-        // gentle easing so the glow trails slightly behind the cursor
-        currentX += (targetX - currentX) * 0.12;
-        currentY += (targetY - currentY) * 0.12;
-        glow.style.transform = `translate(${currentX}px, ${currentY}px) translate(-50%, -50%)`;
-        requestAnimationFrame(animate);
-    }
-    requestAnimationFrame(animate);
 }
 
 /* ---------------------------------------------------------
@@ -282,7 +243,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // ---- init everything else once the DOM is ready ----
     createStars();
     startShootingStars();
-    initCursorGlow();
     initScrollProgress();
     initScrollReveal();
     initSmoothScroll();
