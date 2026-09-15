@@ -1355,3 +1355,194 @@ body::before {
 }
 
 /* prevent background scroll while me
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+/* ===== Coordinators section — scoped, style.css untouched ===== */
+#Coordinators .coord-subheading {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 60px 0 30px;
+}
+#Coordinators .team-subheading {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #00d9ff;
+    text-transform: uppercase;
+    margin: 35px 0 15px;
+}
+#Coordinators .assi {
+    margin-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 34px;
+}
+
+/* ---------- the card ---------- */
+#Coordinators .card2 {
+    position: relative;
+    width: 270px;
+    height: auto;
+    min-height: 390px;
+    margin: 30px 0 0 0;
+    padding: 0 0 22px;
+    border-radius: 18px;
+    background: #f7f6f3;
+    border: none;
+    overflow: hidden;
+    isolation: isolate;
+    box-shadow: 0 12px 34px rgba(0, 0, 0, .35);
+    transition: transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease;
+}
+#Coordinators .card2:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 26px 60px rgba(0, 0, 0, .45);
+}
+
+/* ---------- the photo (sits BEHIND the splash panel) ---------- */
+#Coordinators .card2-img {
+    display: block;
+    width: 168px;
+    height: 168px;
+    padding: 0;
+    margin: 42px auto 0;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+    animation: coordFloat 6s ease-in-out infinite;
+}
+
+/* ---------- starfield splash panel with a hole punched for the face ---------- */
+#Coordinators .card2::before {
+    content: '';
+    display: block;                 /* overrides the global card2::before {display:none} */
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 248px;
+    z-index: 2;
+    pointer-events: none;
+    background:
+        radial-gradient(1.6px 1.6px at 18% 22%, #fff, transparent),
+        radial-gradient(1.4px 1.4px at 72% 16%, #cfe9ff, transparent),
+        radial-gradient(1.8px 1.8px at 40% 12%, #fff, transparent),
+        radial-gradient(1.3px 1.3px at 86% 44%, #fff, transparent),
+        radial-gradient(1.5px 1.5px at 12% 58%, #bcd8ff, transparent),
+        radial-gradient(1.4px 1.4px at 60% 62%, #fff, transparent),
+        radial-gradient(1.2px 1.2px at 30% 78%, #fff, transparent),
+        radial-gradient(1.6px 1.6px at 90% 70%, #cfe9ff, transparent),
+        radial-gradient(ellipse 80% 60% at 30% 20%, #16306b 0%, transparent 65%),
+        linear-gradient(160deg, #0a1733 0%, #0d2149 55%, #091228 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 68%, 93% 77%, 85% 70%, 75% 81%,
+                       63% 72%, 50% 85%, 38% 74%, 27% 83%, 17% 72%, 8% 79%, 0 70%);
+    -webkit-mask-image: radial-gradient(circle 76px at 50% 126px, transparent 74px, #000 76px);
+            mask-image: radial-gradient(circle 76px at 50% 126px, transparent 74px, #000 76px);
+}
+
+/* ---------- drifting orbs over the panel ---------- */
+#Coordinators .card2::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 248px;
+    z-index: 3;
+    pointer-events: none;
+    background:
+        radial-gradient(circle 7px at 22% 24%, #8ab6f5 98%, transparent),
+        radial-gradient(circle 5px at 79% 30%, #ffffff 98%, transparent),
+        radial-gradient(circle 9px at 68% 18%, #9b7fe0 98%, transparent),
+        radial-gradient(circle 6px at 15% 66%, #6fa8ff 98%, transparent),
+        radial-gradient(circle 8px at 85% 60%, #cbd9ff 98%, transparent),
+        radial-gradient(circle 5px at 46% 88%, #2b3f7a 98%, transparent),
+        radial-gradient(circle 7px at 57% 92%, #17255a 98%, transparent);
+    clip-path: polygon(0 0, 100% 0, 100% 68%, 93% 77%, 85% 70%, 75% 81%,
+                       63% 72%, 50% 85%, 38% 74%, 27% 83%, 17% 72%, 8% 79%, 0 70%);
+    -webkit-mask-image: radial-gradient(circle 76px at 50% 126px, transparent 74px, #000 76px);
+            mask-image: radial-gradient(circle 76px at 50% 126px, transparent 74px, #000 76px);
+    animation: coordOrbs 9s ease-in-out infinite alternate;
+}
+
+@keyframes coordFloat {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-7px); }
+}
+@keyframes coordOrbs {
+    0%   { transform: translate(0, 0) scale(1); opacity: .85; }
+    50%  { transform: translate(6px, -5px) scale(1.04); opacity: 1; }
+    100% { transform: translate(-5px, 6px) scale(1); opacity: .85; }
+}
+
+/* ---------- name + role ---------- */
+#Coordinators .card-body { padding: 26px 16px 0; position: relative; z-index: 4; }
+#Coordinators .card-title {
+    padding: 0 0 12px;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: #1b2f9c;
+    letter-spacing: .3px;
+    position: relative;
+}
+#Coordinators .card-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 62%;
+    height: 3px;
+    border-radius: 3px;
+    background: #2b47c9;
+}
+#Coordinators .card-text {
+    margin-top: 10px;
+    color: #4a5b7a;
+    font-size: .92rem;
+    letter-spacing: .5px;
+}
+
+/* social icons still slide in on hover, now inside the card */
+#Coordinators .card2 .social-links { z-index: 5; }
+#Coordinators .card2:hover .social-links { left: 16px; opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+    #Coordinators .card2-img,
+    #Coordinators .card2::after { animation: none; }
+}
+
+@media screen and (max-width: 600px) {
+    #Coordinators .card2 { width: 90%; max-width: 300px; }
+}
+</style>

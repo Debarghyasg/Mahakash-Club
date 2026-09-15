@@ -41,6 +41,17 @@
             margin-left: 0;
             margin-top: 0;
         }
+        /* Row wrapper to place Tech Team and Photography side by side */
+        #Coordinators .team-row {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+        #Coordinators .team-row .team-subheading {
+            margin: 35px 0 15px;
+        }
     </style>
 
 </head>
@@ -146,14 +157,6 @@
                     <h3 class="member-name">Dr.Soma Mukherjee</h3>
                     <p class="member-role">Teacher In-Charge</p>
                     <p class="member-bio">Strategic planning and organizational development specialist with 10+ years experience.</p>
-                    <!-- <div class="social-links">
-                        <a href="#" class="social-link linkedin">in</a>
-                        <a href="#" class="social-link instagram">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                            </svg>
-                        </a>
-                    </div> -->
                 </div>
 
                 <div class="team-card">
@@ -175,11 +178,6 @@
                     <p class="member-bio">Innovation and technology expert driving digital transformation initiatives.</p>
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/shantanu-chakravarty-9b78b83a/" class="social-link linkedin">in</a>
-                        <!-- <a href="#" class="social-link instagram"> -->
-                            <!-- <svg width="20" height="20" viewBox="0 0 24 24" fill="white"> -->
-                                <!-- <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                            </svg> -->
-                        </a>
                     </div>
                 </div>
             </div>
@@ -214,38 +212,7 @@
                         </a>
                     </div>
                 </div>
-
-<!-- 
-                <div class="team-card">
-                    <div class="card-background">
-                        <div class="floating-orb orb-1"></div>
-                        <div class="floating-orb orb-2"></div>
-                        <div class="floating-orb orb-3"></div>
-                        <div class="floating-orb orb-4"></div>
-                        <div class="floating-orb orb-5"></div>
-                        <div class="floating-orb orb-6"></div>
-                        <div class="floating-orb orb-7"></div>
-                        <div class="profile-image-container">
-                            <div class="planet-ring"></div>
-                            <img src="td.png" alt="Team Member" class="profile-image">
-                        </div>
-                    </div>
-                    <h3 class="member-name">Titas Das</h3>
-                    <p class="member-role">Club Auditor</p>
-                    <p class="member-bio">Dedicated to accounts department of the club.</p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/titas-das-gnit/" class="social-link linkedin">in</a>
-                        <a href="https://www.instagram.com/itz___titas_?igsh=MWl1eWNiN3ptazlpYw==" class="social-link instagram">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                            </svg>
-                        </a>
-                    </div> -->
-                </div>
-                </div>
-
-
-                
+            </div>
         </div>
 <!-- Coordinators -->
 
@@ -257,15 +224,12 @@
             <div class="assi">
 
                 <div class="card2">
-
-                             <img src="shreeyoshi.jpg" class="card2-img" alt="Sraoshree Yadav">
-                             <div class="card-body">
-                                    <h4 class="card-title">Sraoshree Yadav</h4>
-                                            <p class="card-text">Senior Coordinator</p>
-                                          
-                                            
-                            </div>
-                             <div class="social-links">
+                    <img src="Sraoshree.jpeg" class="card2-img" alt="Sraoshree Yadav">
+                    <div class="card-body">
+                        <h4 class="card-title">Sraoshree Yadav</h4>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                    <div class="social-links">
                         <a href="https://www.linkedin.com/in/sraoshree-yadav-907b08370?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link linkedin">in</a>
                         <a href="https://www.instagram.com/sraoshree_11?igsh=eTBlYjI5cGR5bGl3" class="social-link instagram">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
@@ -273,23 +237,15 @@
                             </svg>
                         </a>
                     </div>
-
-                    
                 </div>
 
                 <div class="card2">
-
-                             <img src="swapnil.jpg" class="card2-img" alt="Swapnil Basu">
-                             
-                             <div class="card-body">
-                                
-                                    <h4 class="card-title">Swapnil Basu</h4>
-                                   
-                                            <p class="card-text">Senior Coordinator</p>
-                                           
-                                            
-                            </div>
-                             <div class="social-links">
+                    <img src="swapnil.jpg" class="card2-img" alt="Swapnil Basu">
+                    <div class="card-body">
+                        <h4 class="card-title">Swapnil Basu</h4>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                    <div class="social-links">
                         <a href="https://www.linkedin.com/in/swapnil-basu-9b812a332?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link linkedin">in</a>
                         <a href="https://www.instagram.com/itzswapnil_1?igsh=czZqN2FhanNuYTBv" class="social-link instagram">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
@@ -297,20 +253,15 @@
                             </svg>
                         </a>
                     </div>
-
-                    
                 </div>
 
                 <div class="card2">
-
-                             <img src="preety.jpeg" class="card2-img" alt="Prity Roy">
-                             <div class="card-body">
-                                    <h4 class="card-title">Prity Roy</h4>
-                                            <p class="card-text">Senior Coordinator</p>
-                                          
-                                            
-                            </div>
-                             <div class="social-links">
+                    <img src="prity.jpeg" class="card2-img" alt="Prity Roy">
+                    <div class="card-body">
+                        <h4 class="card-title">Prity Roy</h4>
+                        <p class="card-text">Senior Coordinator</p>
+                    </div>
+                    <div class="social-links">
                         <a href="https://www.linkedin.com/in/prity-roy-999567370" class="social-link linkedin">in</a>
                         <a href="https://www.instagram.com/imprity_soul?igsh=MTN5eTF0OHUwMHVtMg==" class="social-link instagram">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
@@ -318,8 +269,6 @@
                             </svg>
                         </a>
                     </div>
-
-                
                 </div>
 
             </div>
@@ -330,28 +279,23 @@
             <h4 class="team-subheading">Content Team</h4>
             <div class="assi">
                 <div class="card2">
-                             <img src="satpreet.jpeg" class="card2-img" alt="Satpreet Singh">
-                             <div class="card-body">
-                                    <h4 class="card-title">Satpreet Singh</h4>
-                                            <p class="card-text">ECE - 2nd Yr</p>
-                            </div>
-                            <div class="social-links">
+                    <img src="satpreet.jpeg" class="card2-img" alt="Satpreet Singh">
+                    <div class="card-body">
+                        <h4 class="card-title">Satpreet Singh</h4>
+                        <p class="card-text">ECE - 2nd Yr</p>
+                    </div>
+                    <div class="social-links">
                         <a href="https://in.linkedin.com/in/satpreet-singh-32b8733a0" class="social-link linkedin">in</a>
-                        <!-- <a href="#" class="social-link instagram">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                            </svg> -->
-                        </a>
                     </div>
                 </div>
                 <div class="card2">
-                             <img src="Alina.jpg" class="card2-img" alt="Alina Warsi">
-                             <div class="card-body">
-                                    <h4 class="card-title">Alina Warsi</h4>
-                                            <p class="card-text">ECE - 2nd Yr</p>
-                            </div>
-                             <div class="social-links">
-                        <a href="#" class="social-link linkedin">in</a>
+                    <img src="Alina.jpg" class="card2-img" alt="Alina Warsi">
+                    <div class="card-body">
+                        <h4 class="card-title">Alina Warsi</h4>
+                        <p class="card-text">ECE - 2nd Yr</p>
+                    </div>
+                    <div class="social-links">
+                        <!-- <a href="#" class="social-link linkedin">in</a> -->
                         <a href="https://www.instagram.com/alinawarsi_1809?stkn=MTI5ZGwwY2czNGZseg==" class="social-link instagram">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
                                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
@@ -360,12 +304,12 @@
                     </div>
                 </div>
                 <div class="card2">
-                             <img src="arpita.jpg" class="card2-img" alt="Arpita Roy">
-                             <div class="card-body">
-                                    <h4 class="card-title">Arpita Roy</h4>
-                                            <p class="card-text">ECE - 2nd Yr</p>
-                            </div>
-                             <div class="social-links">
+                    <img src="arpita.jpeg" class="card2-img" alt="Arpita Roy">
+                    <div class="card-body">
+                        <h4 class="card-title">Arpita Roy</h4>
+                        <p class="card-text">ECE - 2nd Yr</p>
+                    </div>
+                    <div class="social-links">
                         <a href="https://www.linkedin.com/in/arpita-roy-6b6b39388?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link linkedin">in</a>
                         <a href="https://www.instagram.com/kathakali_01?stkn=Z2prMms4NW00bno4&utm_source=ig_contact_invite" class="social-link instagram">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
@@ -375,12 +319,12 @@
                     </div>
                 </div>
                 <div class="card2">
-                             <img src="shrestha.jpeg" class="card2-img" alt="Shrestha Banerjee">
-                             <div class="card-body">
-                                    <h4 class="card-title">Shrestha Banerjee</h4>
-                                            <p class="card-text">Content Team</p>
-                            </div>
-                             <div class="social-links">
+                    <img src="shrestha.jpeg" class="card2-img" alt="Shrestha Banerjee">
+                    <div class="card-body">
+                        <h4 class="card-title">Shrestha Banerjee</h4>
+                        <p class="card-text">Content Team</p>
+                    </div>
+                    <div class="social-links">
                         <a href="https://www.linkedin.com/in/shrestha-banerjee-802521259?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-link linkedin">in</a>
                         <a href="https://www.instagram.com/shrex.04?igsh=MWZ4cXI4anM4cnBvYw==" class="social-link instagram">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
@@ -394,12 +338,12 @@
             <h4 class="team-subheading">Outreach Team</h4>
             <div class="assi">
                 <div class="card2">
-                             <img src="Somanth.jpg" class="card2-img" alt="Somnath Das">
-                             <div class="card-body">
-                                    <h4 class="card-title">Somnath Das</h4>
-                                            <p class="card-text">ECE - 2nd Yr</p>
-                            </div>
-                             <div class="social-links">
+                    <img src="Somanth.jpg" class="card2-img" alt="Somnath Das">
+                    <div class="card-body">
+                        <h4 class="card-title">Somnath Das</h4>
+                        <p class="card-text">ECE - 2nd Yr</p>
+                    </div>
+                    <div class="social-links">
                         <a href="https://www.linkedin.com/in/somnath-das-a2a00b397?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link linkedin">in</a>
                         <a href="https://www.instagram.com/_somnath.d_____?stkn=MXNsZ296czVhcGJ2cg==" class="social-link instagram">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
@@ -409,12 +353,12 @@
                     </div>
                 </div>
                 <div class="card2">
-                             <img src="soumyojit.jpg" class="card2-img" alt="Soumyojit Dhar">
-                             <div class="card-body">
-                                    <h4 class="card-title">Soumyojit Dhar</h4>
-                                            <p class="card-text">CSE - 2nd Yr</p>
-                            </div>
-                             <div class="social-links">
+                    <img src="soumyojit.jpg" class="card2-img" alt="Soumyojit Dhar">
+                    <div class="card-body">
+                        <h4 class="card-title">Soumyojit Dhar</h4>
+                        <p class="card-text">CSE - 2nd Yr</p>
+                    </div>
+                    <div class="social-links">
                         <a href="https://www.linkedin.com/in/soumyojit-dhar-760a31380" class="social-link linkedin">in</a>
                         <a href="https://www.instagram.com/soumyojit_d_?stkn=OTV0OTRteW9kdTl4" class="social-link instagram">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
@@ -424,12 +368,12 @@
                     </div>
                 </div>
                 <div class="card2">
-                             <img src="sumita.jpg" class="card2-img" alt="Sumita Maitra">
-                             <div class="card-body">
-                                    <h4 class="card-title">Sumita Maitra</h4>
-                                            <p class="card-text">ECE - 2nd Yr</p>
-                            </div>
-                             <div class="social-links">
+                    <img src="sumita.jpg" class="card2-img" alt="Sumita Maitra">
+                    <div class="card-body">
+                        <h4 class="card-title">Sumita Maitra</h4>
+                        <p class="card-text">ECE - 2nd Yr</p>
+                    </div>
+                    <div class="social-links">
                         <a href="https://www.linkedin.com/in/sumita-maitra-59335a41b?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link linkedin">in</a>
                         <a href="https://www.instagram.com/itzzz_sumitaa?stkn=ZnBmZHRmbmxya2Mx" class="social-link instagram">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
@@ -443,12 +387,12 @@
             <h4 class="team-subheading">Social Media Management</h4>
             <div class="assi">
                 <div class="card2">
-                             <img src="laxmi.jpg" class="card2-img" alt="Laxmi Pandey">
-                             <div class="card-body">
-                                    <h4 class="card-title">Laxmi Pandey</h4>
-                                            <p class="card-text">BSc DS - 3rd Yr</p>
-                            </div>
-                             <div class="social-links">
+                    <img src="laxmi.jpg" class="card2-img" alt="Laxmi Pandey">
+                    <div class="card-body">
+                        <h4 class="card-title">Laxmi Pandey</h4>
+                        <p class="card-text">BSc DS - 3rd Yr</p>
+                    </div>
+                    <div class="social-links">
                         <a href="https://www.linkedin.com/in/laxmi-pandey-9630652a3?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link linkedin">in</a>
                         <a href="https://www.instagram.com/lakshhuuu_8?stkn=MTNvYjhjOWd2MG03eg==" class="social-link instagram">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
@@ -458,12 +402,12 @@
                     </div>
                 </div>
                 <div class="card2">
-                             <img src="Sayoni.jpeg" class="card2-img" alt="Sayoni Sen">
-                             <div class="card-body">
-                                    <h4 class="card-title">Sayoni Sen</h4>
-                                            <p class="card-text">CSE - 2nd Yr</p>
-                            </div>
-                             <div class="social-links">
+                    <img src="Sayoni.jpeg" class="card2-img" alt="Sayoni Sen">
+                    <div class="card-body">
+                        <h4 class="card-title">Sayoni Sen</h4>
+                        <p class="card-text">CSE - 2nd Yr</p>
+                    </div>
+                    <div class="social-links">
                         <a href="https://www.linkedin.com/in/sayoni-sen-35498136a/" class="social-link linkedin">in</a>
                         <a href="https://www.instagram.com/___sayonii___?stkn=MTF0YzBiaDV3aWs4bg==" class="social-link instagram">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
@@ -473,12 +417,12 @@
                     </div>
                 </div>
                 <div class="card2">
-                             <img src="arnab.jpeg" class="card2-img" alt="Arnab Karmakar">
-                             <div class="card-body">
-                                    <h4 class="card-title">Arnab Karmakar</h4>
-                                            <p class="card-text">CSE - 2nd Yr</p>
-                            </div>
-                             <div class="social-links">
+                    <img src="arnab.jpeg" class="card2-img" alt="Arnab Karmakar">
+                    <div class="card-body">
+                        <h4 class="card-title">Arnab Karmakar</h4>
+                        <p class="card-text">CSE - 2nd Yr</p>
+                    </div>
+                    <div class="social-links">
                         <a href="https://www.linkedin.com/in/arnab-karmakar-2826b336b" class="social-link linkedin">in</a>
                         <a href="https://www.instagram.com/cool_minded_arnab?stkn=aWJwejVkaGRxY2xl" class="social-link instagram">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
@@ -489,21 +433,47 @@
                 </div>
             </div>
 
-            <h4 class="team-subheading">Tech Team</h4>
-            <div class="assi">
-                <div class="card2">
-                             <img src="purbali.jpg" class="card2-img" alt="Purbali Ghosh">
-                             <div class="card-body">
-                                    <h4 class="card-title">Purbali Ghosh</h4>
-                                            <p class="card-text">CSE AIML - 3rd Yr</p>
+            <!-- Tech Team + Photography now share one row -->
+            <div class="team-row">
+                <div>
+                    <h4 class="team-subheading">Tech Team</h4>
+                    <div class="assi">
+                        <div class="card2">
+                            <img src="purbali.jpg" class="card2-img" alt="Purbali Ghosh">
+                            <div class="card-body">
+                                <h4 class="card-title">Purbali Ghosh</h4>
+                                <p class="card-text">CSE AIML - 3rd Yr</p>
                             </div>
-                             <div class="social-links">
-                        <a href="https://in.linkedin.com/in/purbali-ghosh-791b8633b" class="social-link linkedin">in</a>
-                        <a href="https://www.instagram.com/impurbali_8/" class="social-link instagram">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                            </svg>
-                        </a>
+                            <div class="social-links">
+                                <a href="https://in.linkedin.com/in/purbali-ghosh-791b8633b" class="social-link linkedin">in</a>
+                                <a href="https://www.instagram.com/impurbali_8/" class="social-link instagram">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="team-subheading">Photography</h4>
+                    <div class="assi">
+                        <div class="card2">
+                            <img src="sagnik.png" class="card2-img" alt="Sagnik Chowdhury">
+                            <div class="card-body">
+                                <h4 class="card-title">Sagnik Chowdhury</h4>
+                                <p class="card-text">ECE - 2nd Yr</p>
+                            </div>
+                            <div class="social-links">
+                                <a href="https://www.linkedin.com/in/sagnik-chowdhury-2b27bb369?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link linkedin">in</a>
+                                <a href="https://www.instagram.com/itz_ur_sagnik__?stkn=MWg3Y3VjcnFpcGd4cw==" class="social-link instagram">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -511,12 +481,12 @@
             <h4 class="team-subheading">PR & Management Team</h4>
             <div class="assi">
                 <div class="card2">
-                             <img src="ishika.jpeg" class="card2-img" alt="Ishika Gupta">
-                             <div class="card-body">
-                                    <h4 class="card-title">Ishika Gupta</h4>
-                                            <p class="card-text">CSE - 2nd Yr</p>
-                            </div>
-                             <div class="social-links">
+                    <img src="ishika.jpeg" class="card2-img" alt="Ishika Gupta">
+                    <div class="card-body">
+                        <h4 class="card-title">Ishika Gupta</h4>
+                        <p class="card-text">CSE - 2nd Yr</p>
+                    </div>
+                    <div class="social-links">
                         <a href="https://www.linkedin.com/in/ishika-gupta-729771399?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link linkedin">in</a>
                         <a href="https://www.instagram.com/ishikagupta.8?stkn=cG9yMTlzem5yMjUx" class="social-link instagram">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
@@ -526,12 +496,12 @@
                     </div>
                 </div>
                 <div class="card2">
-                             <img src="Brishti.jpg" class="card2-img" alt="Bristi Karmakar">
-                             <div class="card-body">
-                                    <h4 class="card-title">Bristi Karmakar</h4>
-                                            <p class="card-text">ECE - 2nd Yr</p>
-                            </div>
-                             <div class="social-links">
+                    <img src="Brishti.jpg" class="card2-img" alt="Bristi Karmakar">
+                    <div class="card-body">
+                        <h4 class="card-title">Bristi Karmakar</h4>
+                        <p class="card-text">ECE - 2nd Yr</p>
+                    </div>
+                    <div class="social-links">
                         <a href="https://www.linkedin.com/in/brishti-karmakar-459268387?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link linkedin">in</a>
                         <a href="https://www.instagram.com/brishtikarmakar06?stkn=cDJ1NXc3bGh0czFm" class="social-link instagram">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
@@ -541,12 +511,12 @@
                     </div>
                 </div>
                 <div class="card2">
-                             <img src="sneha.jpeg" class="card2-img" alt="Sneha Singha">
-                             <div class="card-body">
-                                    <h4 class="card-title">Sneha Singha</h4>
-                                            <p class="card-text">CSE - 3rd Yr</p>
-                            </div>
-                             <div class="social-links">
+                    <img src="sneha.jpeg" class="card2-img" alt="Sneha Singha">
+                    <div class="card-body">
+                        <h4 class="card-title">Sneha Singha</h4>
+                        <p class="card-text">CSE - 3rd Yr</p>
+                    </div>
+                    <div class="social-links">
                         <a href="www.linkedin.com/in/sneha-singha-6b2181437" class="social-link linkedin">in</a>
                         <a href="https://www.instagram.com/snehaa_s.58?stkn=MXg0eGcyYnBqZHJmOA==" class="social-link instagram">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
@@ -556,12 +526,12 @@
                     </div>
                 </div>
                 <div class="card2">
-                             <img src="disha.jpg" class="card2-img" alt="Disha Ghosh">
-                             <div class="card-body">
-                                    <h4 class="card-title">Disha Ghosh</h4>
-                                            <p class="card-text">PR & Management Team</p>
-                            </div>
-                             <div class="social-links">
+                    <img src="disha.jpg" class="card2-img" alt="Disha Ghosh">
+                    <div class="card-body">
+                        <h4 class="card-title">Disha Ghosh</h4>
+                        <p class="card-text">PR & Management Team</p>
+                    </div>
+                    <div class="social-links">
                         <a href="https://www.linkedin.com/in/disha-ghosh-244402303?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " class="social-link linkedin">in</a>
                         <a href="https://www.instagram.com/__.dishaa_?igsh=MWF4bXVuM3JnYXZ0aw==" class="social-link instagram">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
@@ -571,12 +541,12 @@
                     </div>
                 </div>
                 <div class="card2">
-                             <img src="sayani.jpeg" class="card2-img" alt="Sayani Das">
-                             <div class="card-body">
-                                    <h4 class="card-title">Sayani Das</h4>
-                                            <p class="card-text">PR & Management Team</p>
-                            </div>
-                             <div class="social-links">
+                    <img src="sayani.jpeg" class="card2-img" alt="Sayani Das">
+                    <div class="card-body">
+                        <h4 class="card-title">Sayani Das</h4>
+                        <p class="card-text">PR & Management Team</p>
+                    </div>
+                    <div class="social-links">
                         <a href="https://www.linkedin.com/in/sayanidas17/" class="social-link linkedin">in</a>
                         <a href="https://www.linkedin.com/in/sayanidas17/" class="social-link instagram">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
@@ -587,150 +557,28 @@
                 </div>
             </div>
 
-            <h4 class="team-subheading">Photography</h4>
-            <div class="assi">
-                <div class="card2">
-                             <img src="sagnik.png" class="card2-img" alt="Sagnik Chowdhury">
-                             <div class="card-body">
-                                    <h4 class="card-title">Sagnik Chowdhury</h4>
-                                            <p class="card-text">ECE - 2nd Yr</p>
-                            </div>
-                             <div class="social-links">
-                        <a href="https://www.linkedin.com/in/sagnik-chowdhury-2b27bb369?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="social-link linkedin">in</a>
-                        <a href="https://www.instagram.com/itz_ur_sagnik__?stkn=MWg3Y3VjcnFpcGd4cw==" class="social-link instagram">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
         </div>
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     </div>
 
-    
-
-
+    <footer>
+        <p>© Debarghya Sengupta | 2025</p>
+    </footer>
 
     <script>
         // Show/hide sections based on tab click
         function showSection(sectionId) {
-            // Hide all sections
             const sections = document.querySelectorAll('.section-content');
             sections.forEach(section => {
                 section.classList.remove('active');
             });
 
-            // Remove active class from all tabs
             const tabs = document.querySelectorAll('.tab');
             tabs.forEach(tab => {
                 tab.classList.remove('active');
             });
 
-            // Show selected section
             document.getElementById(sectionId).classList.add('active');
-
-            // Add active class to clicked tab
             event.target.classList.add('active');
         }
 
@@ -745,30 +593,8 @@
             starsContainer.appendChild(star);
         }
     </script>
-</body>
-</html>
-
-
-
-
-
-   
-
-  <footer>
-            <p>© Debarghya Sengupta | 2025</p>
-        </footer>
-
-
-
-
-
-
-
-
-
-
 
     <script src="/app.js"></script>
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
