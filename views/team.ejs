@@ -52,6 +52,21 @@
         #Coordinators .team-row .team-subheading {
             margin: 35px 0 15px;
         }
+
+        /* ---- NEW: fix only Tech Team / Photography shrinking on mobile ----
+           These two IDs are unique to this row, so no other .card2 or
+           .assi group anywhere else on the page is affected. */
+@media (max-width: 768px) {
+    #Coordinators .team-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    #tech-team-group,
+    #photography-group {
+        width: 100%;
+    }
+}
     </style>
 
 </head>
@@ -433,9 +448,11 @@
                 </div>
             </div>
 
-            <!-- Tech Team + Photography now share one row -->
+            <!-- Tech Team + Photography now share one row.
+                 UNIQUE IDs added below (#tech-team-group, #photography-group)
+                 so the mobile fix only ever touches these two blocks. -->
             <div class="team-row">
-                <div>
+                <div id="tech-team-group">
                     <h4 class="team-subheading">Tech Team</h4>
                     <div class="assi">
                         <div class="card2">
@@ -456,7 +473,7 @@
                     </div>
                 </div>
 
-                <div>
+                <div id="photography-group">
                     <h4 class="team-subheading">Photography</h4>
                     <div class="assi">
                         <div class="card2">
