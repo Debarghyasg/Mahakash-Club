@@ -7,144 +7,607 @@
     <link rel="icon" type="image/png" href="favicon.jpeg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="/style.css">
+
+    <!--
+        New styles for this page only: the auto-scrolling photo marquee
+        and the click-to-expand event cards/modal. These are scoped to
+        their own classes so nothing in style.css is overridden.
+        Feel free to move this block into style.css later.
+    -->
+    <style>
+        /* ---------- Photo Marquee (top, left-to-right auto scroll) ---------- */
+        .marquee-section {
+            width: 100%;
+            padding: 140px 0 10px;
+            position: relative;
+            z-index: 1;
+        }
+        @media (max-width: 768px) {
+            .marquee-section {
+                padding-top: 110px;
+            }
+        }
+        .marquee-title {
+            text-align: center;
+            margin-bottom: 18px;
+            letter-spacing: 1px;
+            opacity: 0.9;
+        }
+        .marquee-wrapper {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+            mask-image: linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
+        }
+        .marquee-track {
+            display: flex;
+            gap: 22px;
+            width: max-content;
+            animation: marquee-ltr 32s linear infinite;
+        }
+        .marquee-wrapper:hover .marquee-track {
+            animation-play-state: paused;
+        }
+        .marquee-track img {
+            width: 210px;
+            height: 145px;
+            object-fit: cover;
+            border-radius: 14px;
+            box-shadow: 0 6px 22px rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+            flex-shrink: 0;
+        }
+        .marquee-track img:hover {
+            transform: translateY(-6px) scale(1.06);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+        }
+        @keyframes marquee-ltr {
+            from { transform: translateX(-50%); }
+            to   { transform: translateX(0); }
+        }
+
+        /* ---------- Section headings (Ongoing / 2026 / Past) ---------- */
+        .events-section {
+            margin-top: 46px;
+        }
+        .events-section:first-of-type {
+            margin-top: 30px;
+        }
+        .section-heading {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 22px;
+        }
+        .section-heading h2 {
+            font-size: 1.5rem;
+            margin: 0;
+            white-space: nowrap;
+        }
+        .section-heading .section-rule {
+            height: 1px;
+            flex: 1;
+            background: linear-gradient(90deg, rgba(255,255,255,0.28), transparent);
+        }
+
+        /* ---------- Event Cards Grid ---------- */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 26px;
+            margin-top: 20px;
+        }
+        .event-card {
+            cursor: pointer;
+            border-radius: 16px;
+            padding: 26px 22px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(6px);
+            transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .event-card::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.08), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.35s ease;
+        }
+        .event-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+            border-color: rgba(255, 255, 255, 0.28);
+        }
+        .event-card:hover::after {
+            opacity: 1;
+        }
+        .event-card .event-icon {
+            font-size: 2.4rem;
+            margin-bottom: 10px;
+            display: inline-block;
+            transition: transform 0.4s ease;
+        }
+        .event-card:hover .event-icon {
+            transform: rotate(-8deg) scale(1.15);
+        }
+        .event-card .event-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            opacity: 0.65;
+            margin-bottom: 6px;
+        }
+        .event-card h3 {
+            margin: 4px 0 10px;
+        }
+        .event-card .event-teaser {
+            opacity: 0.85;
+            font-size: 0.95rem;
+            margin-bottom: 14px;
+        }
+        .event-card .click-hint {
+            font-size: 0.82rem;
+            opacity: 0.6;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.3s ease, opacity 0.3s ease;
+        }
+        .event-card:hover .click-hint {
+            opacity: 1;
+            gap: 10px;
+        }
+        .event-card .mini-thumbs {
+            display: flex;
+            gap: 8px;
+            margin-top: 14px;
+        }
+        .event-card .mini-thumbs img {
+            width: 54px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: transform 0.3s ease;
+        }
+        .event-card:hover .mini-thumbs img {
+            transform: translateY(-3px);
+        }
+
+        /* ---------- Modal ---------- */
+        .event-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(4, 4, 12, 0.75);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1050;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.35s ease, visibility 0.35s ease;
+            padding: 20px;
+        }
+        .event-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .event-modal {
+            width: 100%;
+            max-width: 720px;
+            max-height: 85vh;
+            overflow-y: auto;
+            background: #0d0d1a;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 20px;
+            padding: 34px 30px;
+            position: relative;
+            transform: scale(0.9) translateY(20px);
+            opacity: 0;
+            transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.4s ease;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+        }
+        .event-modal-overlay.active .event-modal {
+            transform: scale(1) translateY(0);
+            opacity: 1;
+        }
+        .event-modal-close {
+            position: absolute;
+            top: 16px;
+            right: 18px;
+            background: rgba(255, 255, 255, 0.08);
+            border: none;
+            color: inherit;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            line-height: 1;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        .event-modal-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(90deg);
+        }
+        .event-modal .modal-icon {
+            font-size: 2.6rem;
+        }
+        .event-modal h2 {
+            margin: 10px 0 4px;
+        }
+        .event-modal .modal-subtitle {
+            opacity: 0.7;
+            margin-bottom: 14px;
+            font-size: 0.95rem;
+        }
+        .event-modal .modal-desc {
+            opacity: 0.9;
+            margin-bottom: 22px;
+            line-height: 1.5;
+        }
+        .modal-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 14px;
+        }
+        .modal-gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 12px;
+            opacity: 0;
+            transform: translateY(14px);
+            animation: fade-in-up 0.5s ease forwards;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .modal-gallery img:hover {
+            transform: scale(1.04);
+        }
+        .modal-gallery .no-photos {
+            opacity: 0.6;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+        .modal-gallery img:nth-child(1) { animation-delay: 0.05s; }
+        .modal-gallery img:nth-child(2) { animation-delay: 0.15s; }
+        .modal-gallery img:nth-child(3) { animation-delay: 0.25s; }
+        @keyframes fade-in-up {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        body.modal-open {
+            overflow: hidden;
+        }
+    </style>
 </head>
 <body>
 
-
 <%- include ('navbar.ejs') %>
-     <div class="stars" id="starfield"></div>
-
+<div class="stars" id="starfield"></div>
 
 <div class="ventures">
 
-    <div class="content1" id="ventures">
-            <h1 style="text-align: center;"><b>Our Space Club Ventures</b></h1>
-            <p style="text-align: center;" class="venture-para"><b>Discover the exciting activities and events organized by our space club community.</b></p>
-            
-            <div class="vg">
-                <div class="venture-card">
-                    <div class="venture-image">🔭</div>
-                    <div class="venture-content">
-                        <div><h2  class="event">•Weekly Events</h2></div>
-                        <div class="week">
-                        <h3>Club Sessions</h3>
-                        <p class="venture-para">Join us on our sessions where we learn different things about space exploration and astronomy.</p>
-                        
-                    </div>
-                </div>
-                <div class="session">
-                    <img src="s1.jpg" alt="Session Image" width="180" height="150">
-                    <img src="s2.jpg" alt="Session Image" width="180" height="150">
-                    <img src="s3.jpg" alt="Session Image" width="180" height="150">
+    <!-- ================= AUTO-SCROLLING PHOTO STRIP ================= -->
+    <div class="marquee-section">
+        <h2 class="marquee-title"><b>Moments From Our Club</b></h2>
+        <div class="marquee-wrapper">
+            <div class="marquee-track" id="marqueeTrack">
+                <img src="s1.jpg" alt="Session">
+                <img src="s2.jpg" alt="Session">
+                <img src="s3.jpg" alt="Session">
+                <img src="img1.jpg" alt="Rocket workshop">
+                <img src="img2.jpg" alt="Rocket workshop">
+                <img src="img3.jpg" alt="Rocket workshop">
+                <img src="gs1.jpg" alt="Guest lecture">
+                <img src="gs2.jpg" alt="Guest lecture">
+                <img src="gs3.jpg" alt="Guest lecture">
+                <img src="moon2.jpg" alt="Astrophotography">
+                <img src="moon3.jpg" alt="Astrophotography">
+                <!-- duplicate set right after for a seamless loop -->
+                <img src="s1.jpg" alt="Session" aria-hidden="true">
+                <img src="s2.jpg" alt="Session" aria-hidden="true">
+                <img src="s3.jpg" alt="Session" aria-hidden="true">
+                <img src="img1.jpg" alt="Rocket workshop" aria-hidden="true">
+                <img src="img2.jpg" alt="Rocket workshop" aria-hidden="true">
+                <img src="img3.jpg" alt="Rocket workshop" aria-hidden="true">
+                <img src="gs1.jpg" alt="Guest lecture" aria-hidden="true">
+                <img src="gs2.jpg" alt="Guest lecture" aria-hidden="true">
+                <img src="gs3.jpg" alt="Guest lecture" aria-hidden="true">
+                <img src="moon2.jpg" alt="Astrophotography" aria-hidden="true">
+                <img src="moon3.jpg" alt="Astrophotography" aria-hidden="true">
 
-                </div>
-                </div>
-
-
-                </div>
-                <br />
-                <br />
-
-                <!-- <div class="venture-card">
-                    <div class="venture-image">🎓</div>
-                    <div class="venture-content">
-                        <div class="year">Weekly Sessions</div>
-                        <h4>Space Science Workshops</h4>
-                        <p>Interactive workshops covering astrophysics, planetary science, and the latest space missions. Learn from experts and fellow enthusiasts.</p>
-                    </div>
-                </div> -->
-
-                <div class="venture-card">
-                    <div class="venture-image">🚀</div>
-                    <div class="venture-content">
-                        <div ><h2 class="event">•Previous Events</h2></div>
-                        <div class="week">
-                        <h4 class="evtitle"><b>Promotion of STEM and water rocketry workshop</b></h4>
-                        <br>
-                        <h5>MAHAKASH GNIT × SPATZ IIT KGP </h5>
-                        <p class="venture-para">Design, build, and launch your own model rockets! Our annual launch day brings together engineering and space exploration.</p>
-                    </div>
-                    <div class="session">
-                        <img src="img1.jpg" alt="Rocket Image" width="180" height="150">
-                        <img src="img2.jpg" alt="Rocket Image" width="180" height="150">
-                        <img src="img3.jpg" alt="Rocket Image" width="180" height="150">
-                    </div>
-                </div>
-
-                <div class="venture-card">
-                    <div class="venture-image"></div>
-                    <div class="venture-content">
-                        
-                        <br />
-
-                        <h4 class="evtitle"><b> Guest Lecture by Dr. Debiprasad Duari</b></h4>
-                        <p class="venture-para">Ideas about black hole,wormhole and galaxies.</p>
-                    </div>
-                    <div class="session">
-                    <img src="gs1.jpg" alt="Debiprasad Duari" width="180" height="150">
-                    </div>
-                </div>
-                <br />
-                <br />
-
-
-                <div class="venture-card">
-                    <div class="venture-image"></div>
-                    <div class="venture-content">
-                        <br />
-                        <h4 class="evtitle"><b>Guest lecture by Spatz Team,IIT KGP</b></h4>
-                        <p class="venture-para">Ideas about black hole,wormhole and galaxies.</p>
-                    </div>
-                    <div class="session">
-                    <img src="gs2.jpg" alt="lectures" width="180" height="150">
-                    <img src="gs3.jpg" alt="lectures" width="180" height="150">
-                    </div>
-                </div>
-
-
-                 <div class="venture-card">
-                    <div class="venture-image"></div>
-                    <div class="venture-content">
-                        <br />
-                        <h4 class="evtitle"><b>Astrophotography Event</b></h4>
-                        <p class="venture-para">Capturing the marvellous beauty of the pink moon.</p>
-                    </div>
-                    <div class="session">
-                    <!-- <img src="moon1.jpg" alt="lectures" width="150" height="200"> -->
-                    <img src="moon2.jpg" alt="lectures" width="180" height="150">
-                    <img src="moon3.jpg" alt="lectures" width="180" height="150">
-                    </div>
-                </div>
-
-                <br />
-
-<!-- 
-                <div class="venture-card">
-                    <div class="venture-image">🎤</div>
-                    <div class="venture-content">
-                        <div class="year">Quarterly</div>
-                        <h4>Guest Speaker Series</h4>
-                        <p class="venture-para">Hear from astronomers, astronauts, and space industry professionals who share their experiences and insights into space exploration.</p>
-                    </div>
-                </div> -->
-                </div>
-
-                <!-- <div class="venture-card">
-                    <div class="venture-image">🏕️</div>
-                    <div class="venture-content">
-                        <div class="year">Upcoming Program</div>
-                        <h4>Dark Sky Camping Trips</h4>
-                        <p class="venture-para">Escape light pollution! Our camping trips to dark sky locations offer incredible views of the Milky Way and meteor showers.</p>
-                    </div>
-                </div> -->
+                <img src="STAC261.JPG" alt="Astrophotography" aria-hidden="true">
+                <img src="STAC262.JPG" alt="Astrophotography" aria-hidden="true">
+                <img src="STAC263.JPG" alt="Astrophotography" aria-hidden="true">
+                <img src="STAC264.JPG" alt="Astrophotography" aria-hidden="true">
+                <img src="STAC265.JPG" alt="Astrophotography" aria-hidden="true">
             </div>
         </div>
+    </div>
+
+    <div class="content1" id="ventures">
+        <h1 style="text-align: center;"><b>Our Space Club Ventures</b></h1>
+        <p style="text-align: center;" class="venture-para"><b>Discover the exciting activities and events organized by our space club community. Click any card to see full details.</b></p>
+
+        <!-- ================= ONGOING ================= -->
+        <div class="events-section">
+            <div class="section-heading">
+                <h2>🔭 Ongoing</h2>
+                <div class="section-rule"></div>
+            </div>
+            <div class="events-grid">
+                <div class="event-card" data-event-id="weekly">
+                    <div class="event-icon">🔭</div>
+                    <div class="event-tag">Weekly Events</div>
+                    <h3>Club Sessions</h3>
+                    <p class="event-teaser venture-para">Join us on our sessions where we learn different things about space exploration and astronomy.</p>
+                    <div class="mini-thumbs">
+                        <img src="s1.jpg" alt="">
+                        <img src="s2.jpg" alt="">
+                        <img src="s3.jpg" alt="">
+                    </div>
+                    <span class="click-hint">Click to view details →</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= 2026 EVENTS ================= -->
+        <div class="events-section">
+            <div class="section-heading">
+                <h2>🚀 2026 Events</h2>
+                <div class="section-rule"></div>
+            </div>
+            <div class="events-grid">
+
+                <div class="event-card" data-event-id="iirs">
+                    <div class="event-icon">🛰️</div>
+                    <div class="event-tag">May 2026</div>
+                    <h3>IIRS Course</h3>
+                    <p class="event-teaser venture-para">A course with the Indian Institute of Remote Sensing (IIRS) on remote sensing and GIS applications.</p>
+                    <span class="click-hint">Click to view details →</span>
+                </div>
+
+                <div class="event-card" data-event-id="spatz2026">
+                    <div class="event-icon">🤝</div>
+                    <div class="event-tag">September 2026</div>
+                    <h3>Spatz Collaboration Event</h3>
+                    <p class="event-teaser venture-para">A joint event with the Spatz team, IIT Kharagpur.</p>
+                    <div class="mini-thumbs">
+                        <img src="STAC261.JPG" alt="">
+                        <img src="STAC262.JPG" alt="">
+                        <img src="STAC263.JPG" alt="">
+                        <img src="STAC264.JPG" alt="">
+                        <img src="STAC265.JPG" alt="">
+
+                    </div>
+                    <span class="click-hint">Click to view details →</span>
+
+                </div>
+
+                <div class="event-card" data-event-id="chattopadhyay">
+                    <div class="event-icon">📡</div>
+                    <div class="event-tag">2026</div>
+                    <h3>Talk by Dr. Goutam Chattopadhyay</h3>
+                    <p class="event-teaser venture-para">A talk by Dr. Goutam Chattopadhyay, NASA Jet Propulsion Laboratory.</p>
+                    <span class="click-hint">Click to view details →</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ================= PAST EVENTS ================= -->
+        <div class="events-section">
+            <div class="section-heading">
+                <h2>🌌 Past Events</h2>
+                <div class="section-rule"></div>
+            </div>
+            <div class="events-grid">
+
+                <div class="event-card" data-event-id="rocketry">
+                    <div class="event-icon">🚀</div>
+                    <div class="event-tag">Past Event</div>
+                    <h3>STEM &amp; Water Rocketry Workshop</h3>
+                    <p class="event-teaser venture-para">MAHAKASH GNIT × SPATZ IIT KGP — design, build, and launch your own model rockets!</p>
+                    <div class="mini-thumbs">
+                        <img src="img1.jpg" alt="">
+                        <img src="img2.jpg" alt="">
+                        <img src="img3.jpg" alt="">
+                    </div>
+                    <span class="click-hint">Click to view details →</span>
+                </div>
+
+                <div class="event-card" data-event-id="duari">
+                    <div class="event-icon">🌌</div>
+                    <div class="event-tag">Guest Lecture · Past Event</div>
+                    <h3>Dr. Debiprasad Duari</h3>
+                    <p class="event-teaser venture-para">Ideas about black holes, wormholes, and galaxies.</p>
+                    <div class="mini-thumbs">
+                        <img src="gs1.jpg" alt="">
+                    </div>
+                    <span class="click-hint">Click to view details →</span>
+                </div>
+
+                <div class="event-card" data-event-id="spatz">
+                    <div class="event-icon">🛰️</div>
+                    <div class="event-tag">Guest Lecture · Past Event</div>
+                    <h3>Spatz Team, IIT KGP</h3>
+                    <p class="event-teaser venture-para">Ideas about black holes, wormholes, and galaxies.</p>
+                    <div class="mini-thumbs">
+                        <img src="gs2.jpg" alt="">
+                        <img src="gs3.jpg" alt="">
+                    </div>
+                    <span class="click-hint">Click to view details →</span>
+                </div>
+
+                <div class="event-card" data-event-id="astro">
+                    <div class="event-icon">🌕</div>
+                    <div class="event-tag">Past Event</div>
+                    <h3>Astrophotography Event</h3>
+                    <p class="event-teaser venture-para">Capturing the marvellous beauty of the pink moon.</p>
+                    <div class="mini-thumbs">
+                        <img src="moon2.jpg" alt="">
+                        <img src="moon3.jpg" alt="">
+                    </div>
+                    <span class="click-hint">Click to view details →</span>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </div>
-  <footer>
-            <p>© Debarghya Sengupta | 2025</p>
-        </footer>
-        <script src="/app.js"></script>
-         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script
-        
+
+<!-- ================= MODAL ================= -->
+<div class="event-modal-overlay" id="eventModalOverlay">
+    <div class="event-modal">
+        <button class="event-modal-close" id="eventModalClose" aria-label="Close">&times;</button>
+        <div class="modal-icon" id="modalIcon"></div>
+        <h2 id="modalTitle"></h2>
+        <div class="modal-subtitle" id="modalTag"></div>
+        <p class="modal-desc" id="modalDesc"></p>
+        <div class="modal-gallery" id="modalGallery"></div>
+    </div>
+</div>
+
+<footer>
+    <p>© Debarghya Sengupta | 2025</p>
+</footer>
+<script src="/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+<script>
+    // Event details data — keep in sync with the cards above.
+    const eventData = {
+        weekly: {
+            icon: "🔭",
+            tag: "Weekly Events",
+            title: "Club Sessions",
+            desc: "Join us on our sessions where we learn different things about space exploration and astronomy.",
+            images: ["s1.jpg", "s2.jpg", "s3.jpg"]
+        },
+        rocketry: {
+            icon: "🚀",
+            tag: "Previous Events",
+            title: "Promotion of STEM and Water Rocketry Workshop",
+            desc: "MAHAKASH GNIT × SPATZ IIT KGP — design, build, and launch your own model rockets! Our annual launch day brings together engineering and space exploration.",
+            images: ["img1.jpg", "img2.jpg", "img3.jpg"]
+        },
+        duari: {
+            icon: "🌌",
+            tag: "Guest Lecture",
+            title: "Guest Lecture by Dr. Debiprasad Duari",
+            desc: "Ideas about black holes, wormholes and galaxies.",
+            images: ["gs1.jpg"]
+        },
+        spatz: {
+            icon: "🛰️",
+            tag: "Guest Lecture",
+            title: "Guest Lecture by Spatz Team, IIT KGP",
+            desc: "Ideas about black holes, wormholes and galaxies.",
+            images: ["gs2.jpg", "gs3.jpg"]
+        },
+        astro: {
+            icon: "🌕",
+            tag: "Past Event",
+            title: "Astrophotography Event",
+            desc: "Capturing the marvellous beauty of the pink moon.",
+            images: ["moon2.jpg", "moon3.jpg"]
+        },
+        iirs: {
+            icon: "🛰️",
+            tag: "May 2026",
+            title: "IIRS Course",
+            desc: "A course with the Indian Institute of Remote Sensing (IIRS) on remote sensing and GIS applications.",
+            // Add photo filenames here once available, e.g. "iirs1.jpg"
+            images: []
+        },
+        spatz2026: {
+            icon: "🤝",
+            tag: "September 2026",
+            title: "Spatz Collaboration Event",
+            desc: "A joint event with the Spatz team, IIT Kharagpur.",
+            // Add photo filenames here once available, e.g. "spatz2026-1.jpg"
+            images: []
+        },
+        chattopadhyay: {
+            icon: "📡",
+            tag: "2026",
+            title: "Talk by Dr. Goutam Chattopadhyay",
+            desc: "A talk by Dr. Goutam Chattopadhyay, NASA Jet Propulsion Laboratory.",
+            // Add photo filenames here once available, e.g. "chattopadhyay1.jpg"
+            images: []
+        }
+    };
+
+    const overlay = document.getElementById("eventModalOverlay");
+    const modalIcon = document.getElementById("modalIcon");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalTag = document.getElementById("modalTag");
+    const modalDesc = document.getElementById("modalDesc");
+    const modalGallery = document.getElementById("modalGallery");
+    const closeBtn = document.getElementById("eventModalClose");
+
+    function openEventModal(id) {
+        const data = eventData[id];
+        if (!data) return;
+
+        modalIcon.textContent = data.icon;
+        modalTitle.textContent = data.title;
+        modalTag.textContent = data.tag;
+        modalDesc.textContent = data.desc;
+
+        modalGallery.innerHTML = "";
+        if (data.images.length === 0) {
+            const placeholder = document.createElement("p");
+            placeholder.className = "no-photos";
+            placeholder.textContent = "Photos coming soon.";
+            modalGallery.appendChild(placeholder);
+        } else {
+            data.images.forEach((src) => {
+                const img = document.createElement("img");
+                img.src = src;
+                img.alt = data.title;
+                modalGallery.appendChild(img);
+            });
+        }
+
+        overlay.classList.add("active");
+        document.body.classList.add("modal-open");
+    }
+
+    function closeEventModal() {
+        overlay.classList.remove("active");
+        document.body.classList.remove("modal-open");
+    }
+
+    document.querySelectorAll(".event-card").forEach((card) => {
+        card.addEventListener("click", () => openEventModal(card.dataset.eventId));
+        // keyboard accessibility
+        card.setAttribute("tabindex", "0");
+        card.setAttribute("role", "button");
+        card.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                openEventModal(card.dataset.eventId);
+            }
+        });
+    });
+
+    closeBtn.addEventListener("click", closeEventModal);
+    overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) closeEventModal();
+    });
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeEventModal();
+    });
+</script>
+
 </body>
 </html>
