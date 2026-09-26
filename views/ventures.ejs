@@ -24,7 +24,9 @@
         }
         @media (max-width: 768px) {
             .marquee-section {
-                padding-top: 110px;
+                /* extra top padding on mobile so content clears the fixed navbar
+                   and, on notched devices, the safe-area top inset */
+                padding-top: calc(130px + env(safe-area-inset-top, 0px));
             }
         }
         .marquee-title {
@@ -98,6 +100,16 @@
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 26px;
             margin-top: 20px;
+        }
+        /* Single-card sections (e.g. "Ongoing") get centered instead of
+           stretching one card across the full grid width */
+        .events-grid.single-card {
+            display: flex;
+            justify-content: center;
+        }
+        .events-grid.single-card .event-card {
+            width: 100%;
+            max-width: 360px;
         }
         .event-card {
             cursor: pointer;
@@ -250,7 +262,9 @@
         .event-modal .modal-desc {
             opacity: 0.9;
             margin-bottom: 22px;
-            line-height: 1.5;
+            line-height: 1.6;
+            /* preserve the line breaks / bullet layout of the description text */
+            white-space: pre-line;
         }
         .modal-gallery {
             display: grid;
@@ -311,6 +325,11 @@
                 <img src="gs3.jpg" alt="Guest lecture">
                 <img src="moon2.jpg" alt="Astrophotography">
                 <img src="moon3.jpg" alt="Astrophotography">
+                <img src="STAC261.JPG" alt="STAC 2026">
+                <img src="STAC262.JPG" alt="STAC 2026">
+                <img src="STAC263.JPG" alt="STAC 2026">
+                <img src="STAC264.JPG" alt="STAC 2026">
+                <img src="STAC265.JPG" alt="STAC 2026">
                 <!-- duplicate set right after for a seamless loop -->
                 <img src="s1.jpg" alt="Session" aria-hidden="true">
                 <img src="s2.jpg" alt="Session" aria-hidden="true">
@@ -323,12 +342,11 @@
                 <img src="gs3.jpg" alt="Guest lecture" aria-hidden="true">
                 <img src="moon2.jpg" alt="Astrophotography" aria-hidden="true">
                 <img src="moon3.jpg" alt="Astrophotography" aria-hidden="true">
-
-                <img src="STAC261.JPG" alt="Astrophotography" aria-hidden="true">
-                <img src="STAC262.JPG" alt="Astrophotography" aria-hidden="true">
-                <img src="STAC263.JPG" alt="Astrophotography" aria-hidden="true">
-                <img src="STAC264.JPG" alt="Astrophotography" aria-hidden="true">
-                <img src="STAC265.JPG" alt="Astrophotography" aria-hidden="true">
+                <img src="STAC261.JPG" alt="STAC 2026" aria-hidden="true">
+                <img src="STAC262.JPG" alt="STAC 2026" aria-hidden="true">
+                <img src="STAC263.JPG" alt="STAC 2026" aria-hidden="true">
+                <img src="STAC264.JPG" alt="STAC 2026" aria-hidden="true">
+                <img src="STAC265.JPG" alt="STAC 2026" aria-hidden="true">
             </div>
         </div>
     </div>
@@ -343,7 +361,7 @@
                 <h2>🔭 Ongoing</h2>
                 <div class="section-rule"></div>
             </div>
-            <div class="events-grid">
+            <div class="events-grid single-card">
                 <div class="event-card" data-event-id="weekly">
                     <div class="event-icon">🔭</div>
                     <div class="event-tag">Weekly Events</div>
@@ -376,10 +394,10 @@
                 </div>
 
                 <div class="event-card" data-event-id="spatz2026">
-                    <div class="event-icon">🤝</div>
-                    <div class="event-tag">September 2026</div>
-                    <h3>Spatz Collaboration Event</h3>
-                    <p class="event-teaser venture-para">A joint event with the Spatz team, IIT Kharagpur.</p>
+                    <div class="event-icon">🚀</div>
+                    <div class="event-tag">9th September 2026</div>
+                    <h3>Space Technology Awareness Camp (STAC) 2026</h3>
+                    <p class="event-teaser venture-para">Mahakash Club of GNIT × spAtS, Kalpana Chawla Space Technology Cell, IIT Kharagpur — build a rocket, race a bot, and test your space IQ, all in one day!</p>
                     <div class="mini-thumbs">
                         <img src="STAC261.JPG" alt="">
                         <img src="STAC262.JPG" alt="">
@@ -529,12 +547,11 @@
             images: []
         },
         spatz2026: {
-            icon: "🤝",
-            tag: "September 2026",
-            title: "Spatz Collaboration Event",
-            desc: "A joint event with the Spatz team, IIT Kharagpur.",
-            // Add photo filenames here once available, e.g. "spatz2026-1.jpg"
-            images: []
+            icon: "🚀",
+            tag: "9th September 2026 · GNIT Auditorium & Field",
+            title: "STAC 2026 — Space Technology Awareness Camp",
+            desc: "Mahakash Club of GNIT in collaboration with spAtS, Kalpana Chawla Space Technology Cell, IIT Kharagpur presents\n\nSPACE TECHNOLOGY AWARENESS CAMP (STAC) 2026 🌌\n\nEver wanted to build a rocket, race a bot and test your space IQ - all in one day? This is it!\n\n📅 When: 9th September 2026\n📍 Where: GNIT Auditorium & Field\n\nWhat's in store for you?\n🚀 Pressure-fed Water Rocket Launch - Build & Fly!\n🤖 Line Follower Bot in Action\n🧠 Mind-blowing Space Quiz\n🛰️ Hands-on Exhibition & Workshop by IIT KGP Team",
+            images: ["STAC261.JPG", "STAC262.JPG", "STAC263.JPG", "STAC264.JPG", "STAC265.JPG"]
         },
         chattopadhyay: {
             icon: "📡",
